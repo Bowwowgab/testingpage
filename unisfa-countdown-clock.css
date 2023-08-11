@@ -1,0 +1,130 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: black;
+    color: white;
+}
+
+
+.nav-bar{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    position: fixed;
+    gap: 10px;
+    font-size: xx-large;
+    font-weight: bold;
+    text-align: center;
+    background-color: black;
+    z-index: 999;
+    width: 100%;
+}
+
+header img{
+    width: 70px;
+    height: 70px;
+}
+
+header p{
+    margin: 0;
+}
+
+
+/* Main */
+main{
+    display: flex;
+    justify-content: center;
+    font-family:'Courier New', Courier, monospace;
+    margin-top: 250px
+}
+
+
+/* TTHE CLOCK SECTION */
+.clock-section{
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    height: 500px;
+    width: 500px;
+    background-color: #1D2A35;
+    border: 15px solid #FD9F0A;
+    flex-shrink: 0;
+    overflow: auto; 
+} 
+
+/* .clock-section::-webkit-scrollbar-thumb{
+    width: 1px;
+    background:#1D2A35;
+} */
+
+/* 365 TEXT */
+.countdown-days{
+    font-size: 75px;
+    margin: 10px;
+    text-shadow:  1px 3px #FD9F0A;
+}
+
+/* THE RUNNING TEXT - TIME */
+.runningtime-div{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.runningtime-div img{
+    transform: rotate(40deg);
+}
+
+/* @keyframes typing {
+    from{width: 0} to {width: 100%;}   
+} */
+
+/* TIME TEXT */
+.countdown-time{
+    font-size: 40px;
+    margin: 0;
+    color: #BFBEBC;
+}
+
+/* THE DATE */
+.date{
+    color: #BFBEBC; 
+}
+.days-div{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;  
+    width:75%;
+}
+
+footer{
+    display: flex;
+    justify-content: center;
+    color: #BFBEBC;
+    padding: 10px;
+    font-size: medium;
+    margin-top: 50px;
+    word-spacing: 4px;
+}
+
+footer img{
+    width: 20px;
+}
+
+
+@media screen and (max-width: 400px) {
+
+    header{
+        font-size: x-large;
+    }
+    .clock-section{
+           border-radius: 50%;
+    }
+
+
+}
