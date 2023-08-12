@@ -11,7 +11,7 @@
 
     <!-- THE HEADER -->
     <header>
-        <div class="nav-bar">
+        <div class="nav-bar-div">
             <img src="unisfa.png" alt="">
             <p>COUNT DOWN CLOCK FOR UNISFA GHANBATT 2</p>
         </div>
@@ -19,46 +19,49 @@
 
     <main>
 
-        <!-- THE CLOCK SECTION -->
-        <section class="clock-section">
+        <!-- THE DATE, TIME & CLOCK DIV -->
+            <div class="date-time-days-div">
 
-            <p class="countdown-days">365 DAYS</p>
+                <div class="countdown-days"> 365 DAYS </div>
+                
+                <div class="runningtime-div">
+                    <img src="bell.png" alt="">
+                    <p class="countdown-time" id="count-down-time">10:00 </p>
+                </div>
+              
+                <div  class="date" id="date"> Monday 12-09-2023 </div>    
           
-            <div class="runningtime-div">
-                <img src="bell.png" alt="">
-                <p class="countdown-time" id="count-down-time">10:00 </p>
             </div>
-          
-            <div  class="date" id="date"> Monday 12-09-2023 </div>
+           
+            <!-- CHALK DETIALS -->
+            <div class="chalk-detail-div">
 
-            <!-- CHALK 1 -->
-            <div class="days-div">
-               <p >Chalk 1 - Days Spent:</p>
-               <p id="ck1-days-left"></p>
-               <p id="ck1-money-got"></p> 
+                <!-- CHALK 1 -->
+                <div class="days-div">
+                    <p id="ck-txt">CHALK 1</p>
+                    <p id="ck1"></p>
+                </div>
+                
+                <!-- CHALK 2 -->
+                <div class="days-div">
+                    <p id="ck-txt">CHALK 2</p>
+                    <p id="ck2"></p>
+                </div>
+    
+                 <!-- CHALK 3 -->
+                 <div class="days-div">
+                    <p id="ck-txt">CHALK 3</p>
+                    <p id="ck3"></p>
+                 </div>
             </div>
-            
-            <!-- CHALK 2 -->
-            <div class="days-div">
-                <p>Chalk 2 - Days Spent:</p>
-                <p id="ch2-days-left">340</p>
-                <p id="ck2-money-got">Cash: $12,775</p> 
-             </div>
-
-             <!-- CHALK 3 -->
-             <div class="days-div">
-                <p>Chalk 3 - Days Spent:</p>
-                <p id="ck3-days-left">340</p>
-                <p id="ck3-money-got">Cash: $12,775</p> 
-             </div>
-
-        </section>
+           
 
     </main>
 
     <footer>
        
-        <p>Dev by: <img src="term.png" alt="">  KCode SubField Lab - [PO2 Boateng G : A Coy]</p>
+        <p>Dev by:  KCode SubField Lab - [PO2 Boateng G : A Coy]</p>
+        <img src="termina;.png" alt=""> 
     </footer>
 
     <script src="unisfa-countdown-clock.js"></script>
