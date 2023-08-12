@@ -18,7 +18,7 @@ function timeAndDate(){
     d = (d < 10)? '0' + d : d;
     m = (m < 10)? '0' + m : m;
     y = (y < 10)? '0' + y : y;
-    document.querySelector('#date').innerText = `${dayname} ${d}-${m}-${y}`;
+    document.querySelector('#date').innerText = `${dayname}, ${d}-${m}-${y}`;
     
     setInterval(()=>{timeAndDate()}, 1000);
 }
@@ -36,8 +36,6 @@ function forall(dat, obj){
       obj.days = Math.round((today - dateofarrival) / (24 * 60 * 60 * 1000));
       obj.day_left = 365 - obj.days;
       obj.cash = obj.days * 35;
-     
-
 }
 
 
@@ -45,7 +43,7 @@ function forall(dat, obj){
 function chalkOneDays(){
   forall('2023-03-30', objchk1);
   document.querySelector('#ck1').innerHTML = `Days spent: ${objchk1.days}    Days left: ${objchk1.day_left}   Cash: $${objchk1.cash}`;
-   localStorage.setItem('ckone', JSON.stringify(objchk2));
+  localStorage.setItem('ckone', JSON.stringify(objchk1));
  }
 
  chalkOneDays();
@@ -54,7 +52,7 @@ function chalkOneDays(){
 // CHALK 2 DAYS AND MONEY
 function chalktwoDays(){
   forall('2023-04-05', objchk2);
-  document.querySelector('#ck2').innerHTML = `Days spent: ${objchk2.days}   Days left: ${objchk2.day_left}  Cash: ${objchk2.cash}`;
+  document.querySelector('#ck2').innerHTML = `Days spent: ${objchk2.days}   Days left: ${objchk2.day_left}  Cash: $${objchk2.cash}`;
   localStorage.setItem('cktwo', JSON.stringify(objchk2));
 }
 
@@ -64,11 +62,9 @@ chalktwoDays();
 //CHALK 3 DAYS AND MONEY
 function chalkthreeDays(){
   forall('2023-06-10', objchk3);
-  document.querySelector('#ck3').innerHTML = `Days spent: ${objchk3.days}    Days left: ${ objchk3.day_left}  Cash: ${objchk3.cash}`;
+  document.querySelector('#ck3').innerHTML = `Days spent: ${objchk3.days}    Days left: ${ objchk3.day_left}  Cash: $${objchk3.cash}`;
   localStorage.setItem('ckthree', JSON.stringify(objchk3)); 
 }
 
 chalkthreeDays();
-
-
 
