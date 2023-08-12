@@ -80,7 +80,7 @@ main{
 .runningtime-div img{
     width: 26px;
     height: 26px;
-    transform: rotate(45deg);
+    transform: rotate(35deg);
 }
 
 
@@ -89,7 +89,7 @@ main{
     display: flex;
     flex-direction: column;
     margin-bottom: 30px;
-    padding: 5px;
+    padding: 15px;
 }
 
 /*DAYS LEFT, SPENT AND CASH DIV  */
@@ -107,14 +107,14 @@ footer{
     flex-flow: row wrap;
     justify-content: space-around; 
     align-items: center;
-    padding: 7px;
-    color: #FD9F0A;
+    padding: 10px;
+    color: #9a9c9e;
     border-top: 1px solid #1D2A35;
 }
 
 footer img{
     width: 30px;
-    height: 30px;
+    height: 25px;
 }
 
 @media screen and (max-width: 560px) {
