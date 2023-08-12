@@ -14,7 +14,7 @@ header{
     position: fixed;
     width: 100%;
     background-color: black;
-    border-bottom: 1px solid #1D2A35;
+    border-bottom: 1.5px solid #1D2A35;
     z-index: 999;
 }
 
@@ -80,7 +80,17 @@ main{
 .runningtime-div img{
     width: 26px;
     height: 26px;
-    transform: rotate(35deg);
+    /* transform: rotate(35deg); */
+    animation: aminite 1s linear infinite;
+}
+@keyframes aminite{
+    0%{
+        transform: rotate(45deg);
+    }
+
+    100%{
+        transform: rotate(-45deg);
+    }
 }
 
 
@@ -98,7 +108,7 @@ main{
 }
 
 /* CHALKS DIV TEXT */
-#ck-txt{
+.ck-txt{
    text-decoration: underline;
 }
 
