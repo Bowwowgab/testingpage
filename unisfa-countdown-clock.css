@@ -2,129 +2,131 @@ body{
     margin: 0;
     padding: 0;
     font-family: Arial, Helvetica, sans-serif;
-    background-color: black;
     color: white;
+    background-color: black;
 }
 
 
-.nav-bar{
+header{
     display: flex;
-    flex-flow: row wrap;
     justify-content: center;
-    align-items: center;
     top: 0;
     position: fixed;
-    gap: 10px;
-    font-size: xx-large;
-    font-weight: bold;
-    text-align: center;
-    background-color: black;
-    z-index: 999;
     width: 100%;
+    background-color: black;
+    border-bottom: 1px solid #1D2A35;
+    z-index: 999;
 }
 
-header img{
-    width: 70px;
-    height: 70px;
+/* THE TITLE HEADER */
+.nav-bar-div{
+   display: flex;
+   flex-flow:  row wrap;
+   justify-content: center;
+   align-items: center;
+   text-align: center;
+   gap: 10px;
+   font-size: xx-large;
+   font-weight: bold;
+   padding: 10px;
 }
 
-header p{
+.nav-bar-div img{
+    width: 80px;
+    height: 80px;
+}
+
+.nav-bar-div p{
     margin: 0;
 }
 
-
-/* Main */
 main{
+    margin-top: 250px;
     display: flex;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
     font-family:'Courier New', Courier, monospace;
-    margin-top: 250px
 }
 
-
-/* TTHE CLOCK SECTION */
-.clock-section{
-    display: inline-flex;
+/* THE DATE, TIME & CLOCK DIV  */
+.date-time-days-div{
+    display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: center;
+    align-items: center;
     border-radius: 50%;
+    border: 15px solid #FD9F0A;
+    background-color: #1D2A35;
+    box-shadow: 1px 1px 3px white;
     height: 500px;
     width: 500px;
-    background-color: #1D2A35;
-    border: 15px solid #FD9F0A;
-    flex-shrink: 0;
-    overflow: auto; 
-} 
-
-/* .clock-section::-webkit-scrollbar-thumb{
-    width: 1px;
-    background:#1D2A35;
-} */
-
-/* 365 TEXT */
-.countdown-days{
-    font-size: 75px;
-    margin: 10px;
-    text-shadow:  1px 3px #FD9F0A;
+    font-size: xx-large;
 }
 
-/* THE RUNNING TEXT - TIME */
+/* THE DAYS TEXT DIV */
+.countdown-days{
+    font-size: 75px;
+    text-shadow: 1px 3px #FD9F0A;
+}
+
+/* TIME DIV */
 .runningtime-div{
     display: flex;
     flex-direction: row;
+    gap: 10px;
     align-items: center;
 }
-
 .runningtime-div img{
-    transform: rotate(40deg);
+    width: 26px;
+    height: 26px;
+    transform: rotate(45deg);
 }
 
-/* @keyframes typing {
-    from{width: 0} to {width: 100%;}   
-} */
 
-/* TIME TEXT */
-.countdown-time{
-    font-size: 40px;
-    margin: 0;
-    color: #BFBEBC;
-}
-
-/* THE DATE */
-.date{
-    color: #BFBEBC; 
-}
-.days-div{
+/* CHALK DETIALS */
+.chalk-detail-div{
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;  
-    width:75%;
+    flex-direction: column;
+    margin-bottom: 30px;
+    padding: 5px;
+}
+
+/*DAYS LEFT, SPENT AND CASH DIV  */
+.days-div{
+    font-size: xx-large;
+}
+
+/* CHALKS DIV TEXT */
+#ck-txt{
+   text-decoration: underline;
 }
 
 footer{
     display: flex;
-    justify-content: center;
-    color: #BFBEBC;
-    padding: 10px;
-    font-size: medium;
-    margin-top: 50px;
-    word-spacing: 4px;
+    flex-flow: row wrap;
+    justify-content: space-around; 
+    align-items: center;
+    padding: 7px;
+    color: #FD9F0A;
+    border-top: 1px solid #1D2A35;
 }
 
 footer img{
-    width: 20px;
+    width: 30px;
+    height: 30px;
 }
 
-
-@media screen and (max-width: 400px) {
-
-    header{
-        font-size: x-large;
-    }
-    .clock-section{
-           border-radius: 50%;
+@media screen and (max-width: 560px) {
+    /* THE DATE, TIME AND CLOCKS */
+    .date-time-days-div{
+        height: 350px;
+        width: 348px;
+        font-size:  x-large;
     }
 
-
+    .countdown-days{
+        font-size: 60px;
+    }
 }
+
