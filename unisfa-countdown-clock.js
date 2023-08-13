@@ -1,6 +1,6 @@
 // COUNT DOWN CLCOK
 function timeAndDate(){
-    let hour = new Date().getHours() + 2, min =  new Date().getMinutes(), sec = new Date().getSeconds(), ampm = '';
+    let hour = new Date().getHours(), min =  new Date().getMinutes(), sec = new Date().getSeconds(), ampm = '';
     const dayname = new Date().toLocaleString('en-US', {weekday: 'long'}).toUpperCase();
     let d = new Date().getDate();
     let m = new Date().getMonth() + 1;
