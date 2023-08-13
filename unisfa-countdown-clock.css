@@ -81,15 +81,15 @@ main{
     width: 26px;
     height: 26px;
     /* transform: rotate(35deg); */
-    animation: aminite 1s linear infinite;
+    animation: aminite 4s linear infinite;
 }
 @keyframes aminite{
     0%{
-        transform: rotate(45deg);
+        transform: rotate(40deg);
     }
 
     100%{
-        transform: rotate(-45deg);
+        transform: rotate(-40deg);
     }
 }
 
