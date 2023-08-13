@@ -41,7 +41,7 @@ function forall(dat, obj){
 
 // CHALK 1 DAYS AND MONEY
 function chalkOneDays(){
-  forall('2023-03-30', objchk1);
+  forall('2023-03-29', objchk1);
   document.querySelector('#ck1').innerHTML = `Days spent: ${objchk1.days}    Days left: ${objchk1.day_left}   Cash: $${objchk1.cash}`;
   localStorage.setItem('ckone', JSON.stringify(objchk1));
  }
@@ -51,7 +51,7 @@ function chalkOneDays(){
 
 // CHALK 2 DAYS AND MONEY
 function chalktwoDays(){
-  forall('2023-04-05', objchk2);
+  forall('2023-04-04', objchk2);
   document.querySelector('#ck2').innerHTML = `Days spent: ${objchk2.days}   Days left: ${objchk2.day_left}  Cash: $${objchk2.cash}`;
   localStorage.setItem('cktwo', JSON.stringify(objchk2));
 }
@@ -61,7 +61,7 @@ chalktwoDays();
 
 //CHALK 3 DAYS AND MONEY
 function chalkthreeDays(){
-  forall('2023-06-10', objchk3);
+  forall('2023-06-09', objchk3);
   document.querySelector('#ck3').innerHTML = `Days spent: ${objchk3.days}    Days left: ${ objchk3.day_left}  Cash: $${objchk3.cash}`;
   localStorage.setItem('ckthree', JSON.stringify(objchk3)); 
 }
