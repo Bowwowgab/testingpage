@@ -115,8 +115,9 @@ main{
 footer{
     display: flex;
     flex-flow: row wrap;
-    justify-content: space-around; 
+    justify-content: center; 
     align-items: center;
+    gap: 7px;
     padding: 10px;
     color: #9a9c9e;
     border-top: 1px solid #1D2A35;
