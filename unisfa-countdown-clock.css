@@ -5,7 +5,10 @@ body{
     color: white;
     background-color: black;
 }
-
+.body-style{
+  color: black;
+  background-color: #F2F2F2;
+}
 
 header{
     display: flex;
@@ -14,8 +17,13 @@ header{
     position: fixed;
     width: 100%;
     background-color: black;
-    border-bottom: 1.5px solid #1D2A35;
+    border-bottom: 2px solid #1D2A35;
     z-index: 999;
+    box-shadow: 1px 1px 3px white;
+}
+.header-style{
+    background-color: rgb(231, 230, 230);
+    color: black;
 }
 
 /* THE TITLE HEADER */
@@ -35,19 +43,67 @@ header{
     width: 80px;
     height: 80px;
 }
-
 .nav-bar-div p{
     margin: 0;
 }
 
+
 main{
-    margin-top: 250px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    font-family:'Courier New', Courier, monospace;
+    align-self: center;
 }
+
+/* THE DARK AND WHITE DIV */
+.dark-white-div{
+    margin-top: 230px;
+    display: flex;
+    flex-direction: column;
+    align-self: flex-end;
+    align-items: center;
+    margin-right: 15px;
+    padding: 5px;
+    width: 40px;
+}
+.dark-white-div p{
+    margin: 3px;
+}
+
+/* THE DARK N WHITE BUTTON DIV */
+.dw-holder-div{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: green;
+    border-radius: 30px;
+    width: 40px;
+    height: 20px;
+    border: 0;
+}
+/* THE BUTTON FOR THE ACTION */
+.dw-holder-div button{
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    background-color: #dae7f3;
+    border: 0;
+    cursor: pointer;
+}
+
+/* MOVE TO 20PX AND CHANGE DARK */
+.dark-white-div-style1{
+    transform: translateX(20px);
+    transition: 1s;
+}
+/* MOVE TO 0 AND CHANGE TO LIGHT */
+.dark-white-div-style2{
+    transform: translateX(0);
+    transition: 1s;
+}
+
+
 
 /* THE DATE, TIME & CLOCK DIV  */
 .date-time-days-div{
@@ -56,12 +112,14 @@ main{
     justify-content: center;
     align-items: center;
     border-radius: 50%;
-    border: 15px solid #FD9F0A;
+    border: 12px solid #FD9F0A;
     background-color: #1D2A35;
     box-shadow: 1px 1px 3px white;
     height: 500px;
     width: 500px;
     font-size: xx-large;
+    color: white;
+    font-family:'Courier New', Courier, monospace;   
 }
 
 /* THE DAYS TEXT DIV */
@@ -98,8 +156,8 @@ main{
 .chalk-detail-div{
     display: flex;
     flex-direction: column;
-    margin-bottom: 30px;
     padding: 15px;
+    word-spacing: 20px;
 }
 
 /*DAYS LEFT, SPENT AND CASH DIV  */
@@ -117,7 +175,7 @@ footer{
     flex-flow: row wrap;
     justify-content: center; 
     align-items: center;
-    gap: 7px;
+    gap: 5px;
     padding: 10px;
     color: #9a9c9e;
     border-top: 1px solid #1D2A35;
@@ -133,7 +191,7 @@ footer img{
     .date-time-days-div{
         height: 350px;
         width: 348px;
-        font-size:  x-large;
+        font-size: x-large;
     }
 
     .countdown-days{
