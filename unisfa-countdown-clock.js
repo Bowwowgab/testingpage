@@ -68,10 +68,10 @@ function chalkthreeDays(){
 
 chalkthreeDays();
 
-let dl =  document.querySelector('#dw-holder-div-btn');
-let dl_txt = document.querySelector('#dark-light-para');
-let header = document.querySelector('header');
-let bn = false;
+ let dl =  document.querySelector('#dw-holder-div-btn');
+ let dl_txt = document.querySelector('#dark-light-para');
+ let header = document.querySelector('header');
+ let bn = false;
  dl.addEventListener('click', ()=>{
       if(!bn){
         bn = true;
@@ -97,4 +97,3 @@ function lightView(){
   document.body.classList.remove('body-style');
   document.querySelector('header').classList.remove('header-style');
 }
-
