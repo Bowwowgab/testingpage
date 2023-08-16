@@ -157,7 +157,6 @@ main{
     display: flex;
     flex-direction: column;
     padding: 15px;
-    word-spacing: 20px;
 }
 
 /*DAYS LEFT, SPENT AND CASH DIV  */
