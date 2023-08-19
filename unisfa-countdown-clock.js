@@ -119,25 +119,3 @@ window.addEventListener('scroll', ()=>{
     }
 });
 
-
-// // CHALK 1 DAYS MONEY
-// function chalkOneDays(){
-//   let today = new Date();
-//   let yes = new Date('2023-03-30');
-//       objchk1.days = Math.round((today - yes) / (24 * 60 * 60 * 1000));
-//       objchk1.cash = objchk1.days * 35;
-//       document.querySelector('#ck1-days-left').innerHTML = objchk1.days;
-//       document.querySelector('#ck1-money-got').innerHTML = `Cash: $${objchk1.cash}`;
-
-//       localStorage.setItem('ckone', JSON.stringify(objchk1));
-//  }
-
-// const haschange = ()=>{
-//   setInterval(()=>{
-//     let pre = new Date().getDate(); 
-//     let cur = new Date().getDate(); 
-//      if (pre !== cur){
-//       chalkOneDays();
-//      }
-//     }, 1000);
-// };
