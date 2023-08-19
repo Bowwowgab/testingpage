@@ -35,7 +35,7 @@ function forall(dat, obj){
   let today = new Date();
   let dateofarrival = new Date(dat);
       obj.days     = Math.round((today - dateofarrival) / (24 * 60 * 60 * 1000));
-      obj.day_left = 365 - obj.days;
+      obj.day_left = 360 - obj.days;
       obj.month    = Math.floor(obj.days / 30);
       obj.weeks    = Math.floor(obj.days / 7);
       obj.remdays  = Math.floor(obj.days % 7);
