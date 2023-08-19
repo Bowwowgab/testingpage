@@ -28,6 +28,7 @@ timeAndDate();
 let objchk1 = JSON.parse(localStorage.getItem('ckone')) ||   {days: 0, day_left:0, cash: 0};
 let objchk2 = JSON.parse(localStorage.getItem('cktwo')) ||   {days: 0, day_left:0, cash: 0};
 let objchk3 = JSON.parse(localStorage.getItem('ckthree')) || {days: 0, day_left:0, cash: 0};
+// let color = JSON.parse(localStor4age.getItem('color')) || { color(){}}
 
 // DAYS SPENT METHOD
 function forall(dat, obj){
@@ -68,9 +69,12 @@ function chalkthreeDays(){
 
 chalkthreeDays();
 
+
+
+ // TO CHANGE COLOR AND BACKGOUND OF THE PAGE 
  let dl =  document.querySelector('#dw-holder-div-btn');
  let dl_txt = document.querySelector('#dark-light-para');
- let header = document.querySelector('header');
+ let button_div =  document.querySelector('#dw-holder-div');
  let bn = false;
  dl.addEventListener('click', ()=>{
       if(!bn){
@@ -82,18 +86,58 @@ chalkthreeDays();
       }
   });
   
+  // DARK ATTRIBUTE
 function darkView(){
   dl.classList.add('dark-white-div-style1');
   dl.classList.remove('dark-white-div-style2');
   dl_txt.innerHTML = 'Light';
+  button_div.classList.add('dw-holder-div-style');
   document.body.classList.add('body-style');
-  document.querySelector('header').classList.add('header-style');
+  document.querySelector('.navigational-bar').classList.add('header-style');
+  document.querySelector('#second-nav-bar-dark-white-div').classList.add('second-nav-bar-style')
 }
 
+// LIGHT ATTRIBRUTE
 function lightView(){
   dl.classList.add('dark-white-div-style2');
-  dl.classList.remove('dark-white-div-style1');
+  dl.classList.remove('dark-white-div-style1'); 
   dl_txt.innerHTML = 'Dark';
+  button_div.classList.remove('dw-holder-div-style');
   document.body.classList.remove('body-style');
-  document.querySelector('header').classList.remove('header-style');
+  document.querySelector('.navigational-bar').classList.remove('header-style');
+  document.querySelector('#second-nav-bar-dark-white-div').classList.remove('second-nav-bar-style')
 }
+
+// TO FIX THE SWITCH DIV WHEN SCROLL
+window.addEventListener('scroll', ()=>{
+    if(window.scrollY > 99){
+      document.querySelector('#second-nav-bar-dark-white-div').style.position = 'fixed';
+      document.querySelector('#unisfa-logo').style.visibility = 'visible';
+    }else{
+      document.querySelector('#second-nav-bar-dark-white-div').style.position = '';
+      document.querySelector('#unisfa-logo').style.visibility = 'hidden';
+    }
+});
+
+
+// // CHALK 1 DAYS MONEY
+// function chalkOneDays(){
+//   let today = new Date();
+//   let yes = new Date('2023-03-30');
+//       objchk1.days = Math.round((today - yes) / (24 * 60 * 60 * 1000));
+//       objchk1.cash = objchk1.days * 35;
+//       document.querySelector('#ck1-days-left').innerHTML = objchk1.days;
+//       document.querySelector('#ck1-money-got').innerHTML = `Cash: $${objchk1.cash}`;
+
+//       localStorage.setItem('ckone', JSON.stringify(objchk1));
+//  }
+
+// const haschange = ()=>{
+//   setInterval(()=>{
+//     let pre = new Date().getDate(); 
+//     let cur = new Date().getDate(); 
+//      if (pre !== cur){
+//       chalkOneDays();
+//      }
+//     }, 1000);
+// };
