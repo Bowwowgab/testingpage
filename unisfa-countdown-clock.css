@@ -154,31 +154,19 @@ main{
 .runningtime-div img{
     width: 26px;
     height: 26px;
-    /* transform: rotate(35deg); */
-    animation: aminite 4s linear infinite;
 }
-@keyframes aminite{
-    0%{
-        transform: rotate(40deg);
-    }
-
-    100%{
-        transform: rotate(-40deg);
-    }
-}
-
 
 /* CHALK DETIALS */
 .chalk-detail-div{
     display: flex;
-    flex-direction: column;
+    flex-flow: row wrap;
     padding: 15px;
     gap: 30px;
 }
 
 /*DAYS LEFT, SPENT AND CASH DIV  */
 .days-div{
-    padding: 20px;
+    padding: 30px;
     border-radius: 20px;
     background-color: #9a9c9e54;
     font-size: x-large;
@@ -218,7 +206,7 @@ main{
 
 .anthem-title-div, .slogan-title-div{
     font-size: xx-large;
-    border-left: 5px solid #79D6F1;
+    border-left: 5px solid #007AFF;
     padding-left:30px;
     font-weight: bold;
 }
