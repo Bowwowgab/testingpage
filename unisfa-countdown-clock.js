@@ -25,25 +25,30 @@ function timeAndDate(){
 
 timeAndDate();
 
-let objchk1 = JSON.parse(localStorage.getItem('ckone')) ||   {days: 0, day_left:0, cash: 0};
-let objchk2 = JSON.parse(localStorage.getItem('cktwo')) ||   {days: 0, day_left:0, cash: 0};
-let objchk3 = JSON.parse(localStorage.getItem('ckthree')) || {days: 0, day_left:0, cash: 0};
+let objchk1 = JSON.parse(localStorage.getItem('ckone')) ||   {days: 0, day_left:0, month:0, weeks:0, remdays:0, cash: 0};
+let objchk2 = JSON.parse(localStorage.getItem('cktwo')) ||   {days: 0, day_left:0, month:0, weeks:0, remdays:0, cash: 0};
+let objchk3 = JSON.parse(localStorage.getItem('ckthree')) || {days: 0, day_left:0, month:0, weeks:0, remdays:0, cash: 0};
 // let color = JSON.parse(localStor4age.getItem('color')) || { color(){}}
 
 // DAYS SPENT METHOD
 function forall(dat, obj){
   let today = new Date();
   let dateofarrival = new Date(dat);
-      obj.days = Math.round((today - dateofarrival) / (24 * 60 * 60 * 1000));
+      obj.days     = Math.round((today - dateofarrival) / (24 * 60 * 60 * 1000));
       obj.day_left = 365 - obj.days;
-      obj.cash = obj.days * 35;
+      obj.month    = Math.floor(obj.days / 30);
+      obj.weeks    = Math.floor(obj.days / 7);
+      obj.remdays  = Math.floor(obj.days % 7);
+      obj.cash     = obj.days * 35;
 }
 
 
 // CHALK 1 DAYS AND MONEY
 function chalkOneDays(){
   forall('2023-03-29', objchk1);
-  document.querySelector('#ck1').innerHTML = `Days spent: ${objchk1.days}    Days left: ${objchk1.day_left}  Cash: $${objchk1.cash}`;
+  document.querySelector('#ck1').innerHTML = `Days spent: ${objchk1.days}  Days left: ${objchk1.day_left}
+   <p>Total Months: ${objchk1.month}</p>  <p>Total Weeks: ${objchk1.weeks}</p>  <p>Remaining Day(s): ${objchk1.remdays}</p> 
+   Cash: $${objchk1.cash}`;
   localStorage.setItem('ckone', JSON.stringify(objchk1));
  }
 
@@ -53,7 +58,9 @@ function chalkOneDays(){
 // CHALK 2 DAYS AND MONEY
 function chalktwoDays(){
   forall('2023-04-04', objchk2);
-  document.querySelector('#ck2').innerHTML = `Days spent: ${objchk2.days}   Days left: ${objchk2.day_left} Cash: $${objchk2.cash}`;
+  document.querySelector('#ck2').innerHTML = `Days spent: ${objchk2.days}  Days left: ${objchk2.day_left}
+  <p>Total Months: ${objchk2.month}</p>  <p>Total Weeks: ${objchk2.weeks}</p>  <p>Remaining Day(s): ${objchk2.remdays}</p> 
+  Cash: $${objchk2.cash}`;;
   localStorage.setItem('cktwo', JSON.stringify(objchk2));
 }
 
@@ -63,7 +70,9 @@ chalktwoDays();
 //CHALK 3 DAYS AND MONEY
 function chalkthreeDays(){
   forall('2023-06-09', objchk3);
-  document.querySelector('#ck3').innerHTML = `Days spent: ${objchk3.days}    Days left: ${ objchk3.day_left} Cash: $${objchk3.cash}`;
+  document.querySelector('#ck3').innerHTML = `Days spent: ${objchk3.days}  Days left: ${objchk3.day_left}
+  <p>Total Months: ${objchk3.month}</p>  <p>Total Weeks: ${objchk3.weeks}</p>  <p>Remaining Day(s): ${objchk3.remdays}</p> 
+  Cash: $${objchk3.cash}`;
   localStorage.setItem('ckthree', JSON.stringify(objchk3)); 
 }
 
@@ -118,4 +127,3 @@ window.addEventListener('scroll', ()=>{
       document.querySelector('#unisfa-logo').style.visibility = 'hidden';
     }
 });
-
