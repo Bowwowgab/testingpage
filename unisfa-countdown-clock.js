@@ -45,14 +45,17 @@ let objchk3 = JSON.parse(localStorage.getItem('ckthree')) || {days: 0, day_left:
 
 // DAYS SPENT METHOD
 function forall(dat, obj){
-  const today = new Date().getTime();
-  const dateofarrival = new Date(dat).getTime();
+  setInterval(()=>{
+     const today = new Date().getTime();
+     const dateofarrival = new Date(dat).getTime();
       obj.days     = Math.round((today - dateofarrival) / (24 * 60 * 60 * 1000));
       obj.day_left = 360 - obj.days;
       obj.month    = Math.floor(obj.days / 30);
       obj.weeks    = Math.floor(obj.days / 7);
       obj.remdays  = Math.floor(obj.days % 7);
       obj.cash     = obj.days * 35;
+  }, 5000);
+ 
 }
 
 
