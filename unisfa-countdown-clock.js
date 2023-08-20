@@ -1,3 +1,17 @@
+// TO FIX THE SWITCH DIV WHEN SCROLL
+window.addEventListener('scroll', ()=>{
+  const sec =  document.querySelector('#second-nav-bar-dark-white-div');
+  const uni =  document.querySelector('#unisfa-logo');
+    if(window.scrollY >= 125){
+        sec.style.position = 'fixed';
+        uni.style.visibility = 'visible';
+    }else{
+        sec.style.position = '';
+        uni.style.visibility = 'hidden';
+    }
+});
+
+
 // COUNT DOWN CLCOK
 function timeAndDate(){
     let hour = new Date().getHours(), min =  new Date().getMinutes(), sec = new Date().getSeconds(), ampm = '';
@@ -28,12 +42,11 @@ timeAndDate();
 let objchk1 = JSON.parse(localStorage.getItem('ckone')) ||   {days: 0, day_left:0, month:0, weeks:0, remdays:0, cash: 0};
 let objchk2 = JSON.parse(localStorage.getItem('cktwo')) ||   {days: 0, day_left:0, month:0, weeks:0, remdays:0, cash: 0};
 let objchk3 = JSON.parse(localStorage.getItem('ckthree')) || {days: 0, day_left:0, month:0, weeks:0, remdays:0, cash: 0};
-// let color = JSON.parse(localStor4age.getItem('color')) || { color(){}}
 
 // DAYS SPENT METHOD
 function forall(dat, obj){
-  let today = new Date();
-  let dateofarrival = new Date(dat);
+  const today = new Date().getTime();
+  const dateofarrival = new Date(dat).getTime();
       obj.days     = Math.round((today - dateofarrival) / (24 * 60 * 60 * 1000));
       obj.day_left = 360 - obj.days;
       obj.month    = Math.floor(obj.days / 30);
@@ -46,10 +59,12 @@ function forall(dat, obj){
 // CHALK 1 DAYS AND MONEY
 function chalkOneDays(){
   forall('2023-03-30', objchk1);
-  document.querySelector('#ck1').innerHTML = `Days spent: ${objchk1.days}  Days left: ${objchk1.day_left}
-   <p>Total Months: ${objchk1.month}</p>  <p>Total Weeks: ${objchk1.weeks}</p>  <p>Remaining Day(s): ${objchk1.remdays}</p> 
-   Cash: $${objchk1.cash}`;
-  localStorage.setItem('ckone', JSON.stringify(objchk1));
+    document.querySelector('#ck1').innerHTML = `Days spent: ${objchk1.days}  Days left: ${objchk1.day_left}
+    <p> Total Months: ${objchk1.month} </p> 
+    <p> Total Weeks: ${objchk1.weeks}  </p>
+    <p> Remaining Day(s): ${objchk1.remdays} </p> 
+    Cash: $${objchk1.cash}`;
+    localStorage.setItem('ckone', JSON.stringify(objchk1));
  }
 
  chalkOneDays();
@@ -57,11 +72,13 @@ function chalkOneDays(){
 
 // CHALK 2 DAYS AND MONEY
 function chalktwoDays(){
-  forall('2023-04-05', objchk2);
-  document.querySelector('#ck2').innerHTML = `Days spent: ${objchk2.days}  Days left: ${objchk2.day_left}
-  <p>Total Months: ${objchk2.month}</p>  <p>Total Weeks: ${objchk2.weeks}</p>  <p>Remaining Day(s): ${objchk2.remdays}</p> 
-  Cash: $${objchk2.cash}`;;
-  localStorage.setItem('cktwo', JSON.stringify(objchk2));
+    forall('2023-04-05', objchk2);
+    document.querySelector('#ck2').innerHTML = `Days spent: ${objchk2.days}  Days left: ${objchk2.day_left}
+    <p> Total Months: ${objchk2.month} </p>
+    <p> Total Weeks: ${objchk2.weeks}  </p>
+    <p> Remaining Day(s): ${objchk2.remdays} </p> 
+    Cash: $${objchk2.cash}`;
+    localStorage.setItem('cktwo', JSON.stringify(objchk2));
 }
 
 chalktwoDays();
@@ -69,15 +86,16 @@ chalktwoDays();
 
 //CHALK 3 DAYS AND MONEY
 function chalkthreeDays(){
-  forall('2023-06-10', objchk3);
-  document.querySelector('#ck3').innerHTML = `Days spent: ${objchk3.days}  Days left: ${objchk3.day_left}
-  <p>Total Months: ${objchk3.month}</p>  <p>Total Weeks: ${objchk3.weeks}</p>  <p>Remaining Day(s): ${objchk3.remdays}</p> 
-  Cash: $${objchk3.cash}`;
-  localStorage.setItem('ckthree', JSON.stringify(objchk3)); 
+    forall('2023-06-10', objchk3);
+    document.querySelector('#ck3').innerHTML = `Days spent: ${objchk3.days}  Days left: ${objchk3.day_left}
+    <p> Total Months: ${objchk3.month} </p> 
+    <p> Total Weeks: ${objchk3.weeks}  </p>
+    <p> Remaining Day(s): ${objchk3.remdays} </p> 
+    Cash: $${objchk3.cash}`;
+    localStorage.setItem('ckthree', JSON.stringify(objchk3)); 
 }
 
 chalkthreeDays();
-
 
 
  // TO CHANGE COLOR AND BACKGOUND OF THE PAGE 
@@ -103,7 +121,7 @@ function darkView(){
   button_div.classList.add('dw-holder-div-style');
   document.body.classList.add('body-style');
   document.querySelector('.navigational-bar').classList.add('header-style');
-  document.querySelector('#second-nav-bar-dark-white-div').classList.add('second-nav-bar-style')
+  document.querySelector('#second-nav-bar-dark-white-div').classList.add('second-nav-bar-style');
 }
 
 // LIGHT ATTRIBRUTE
@@ -114,16 +132,5 @@ function lightView(){
   button_div.classList.remove('dw-holder-div-style');
   document.body.classList.remove('body-style');
   document.querySelector('.navigational-bar').classList.remove('header-style');
-  document.querySelector('#second-nav-bar-dark-white-div').classList.remove('second-nav-bar-style')
+  document.querySelector('#second-nav-bar-dark-white-div').classList.remove('second-nav-bar-style');
 }
-
-// TO FIX THE SWITCH DIV WHEN SCROLL
-window.addEventListener('scroll', ()=>{
-    if(window.scrollY > 99){
-      document.querySelector('#second-nav-bar-dark-white-div').style.position = 'fixed';
-      document.querySelector('#unisfa-logo').style.visibility = 'visible';
-    }else{
-      document.querySelector('#second-nav-bar-dark-white-div').style.position = '';
-      document.querySelector('#unisfa-logo').style.visibility = 'hidden';
-    }
-});
