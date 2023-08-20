@@ -46,8 +46,8 @@ let objchk3 = JSON.parse(localStorage.getItem('ckthree')) || {days: 0, day_left:
 // DAYS SPENT METHOD
 function forall(dat, obj){
   setInterval(()=>{
-     const today = new Date().getTime();
-     const dateofarrival = new Date(dat).getTime();
+     const today = new Date();
+     const dateofarrival = new Date(dat);
       obj.days     = Math.round((today - dateofarrival) / (24 * 60 * 60 * 1000));
       obj.day_left = 360 - obj.days;
       obj.month    = Math.floor(obj.days / 30);
