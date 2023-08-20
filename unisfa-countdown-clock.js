@@ -54,8 +54,7 @@ function forall(dat, obj){
       obj.weeks    = Math.floor(obj.days / 7);
       obj.remdays  = Math.floor(obj.days % 7);
       obj.cash     = obj.days * 35;
-  }, 5000);
- 
+  }, 1000);
 }
 
 
