@@ -60,7 +60,13 @@ body{
 /* LOGO IN THE SECOND NAV BAR DIV */
 .unisfa-logo{
     visibility: hidden;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-weight: bold;
+    font-size: x-large;
 }
+
 .unisfa-logo img{
     padding: 7px; 
     width: 50px;
