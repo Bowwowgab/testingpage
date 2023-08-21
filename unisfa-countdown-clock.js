@@ -45,7 +45,6 @@ let objchk3 = JSON.parse(localStorage.getItem('ckthree')) || {days: 0, day_left:
 
 // DAYS SPENT METHOD
 function forall(dat, obj){
-  setInterval(()=>{
      const today = new Date();
      const dateofarrival = new Date(dat);
       obj.days     = Math.round((today - dateofarrival) / (24 * 60 * 60 * 1000));
@@ -54,7 +53,6 @@ function forall(dat, obj){
       obj.weeks    = Math.floor(obj.days / 7);
       obj.remdays  = Math.floor(obj.days % 7);
       obj.cash     = obj.days * 35;
-  }, 1000);
 }
 
 
