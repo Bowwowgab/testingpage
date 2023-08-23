@@ -190,6 +190,7 @@ main{
     border-left: 6px solid #007AFF;
     padding-left:30px;
     font-weight: bold;
+    text-transform: uppercase;
 }
 
 .mot-txt{
