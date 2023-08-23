@@ -2,7 +2,7 @@
 window.addEventListener('scroll', ()=>{
   const sec =  document.querySelector('#second-nav-bar-dark-white-div');
   const uni =  document.querySelector('#unisfa-txt-div');
-    if(window.scrollY >= 100){
+    if(window.scrollY >= 90){
         sec.style.position = 'fixed';
         uni.style.visibility = 'visible';
     }else{
