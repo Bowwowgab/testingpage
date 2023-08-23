@@ -1,8 +1,8 @@
 // TO FIX THE SWITCH DIV WHEN SCROLL
 window.addEventListener('scroll', ()=>{
   const sec =  document.querySelector('#second-nav-bar-dark-white-div');
-  const uni =  document.querySelector('#unisfa-logo');
-    if(window.scrollY >= 125){
+  const uni =  document.querySelector('#unisfa-txt-div');
+    if(window.scrollY >= 100){
         sec.style.position = 'fixed';
         uni.style.visibility = 'visible';
     }else{
@@ -20,7 +20,7 @@ function timeAndDate(){
     let m = new Date().getMonth() + 1;
     let y = new Date().getFullYear();
 
-    // TIME
+    // TIME AM OR PM
     ampm = (hour >= 12)?  ampm = 'PM': ampm = 'AM';
 
     hour = (hour < 10)? '0' + hour : hour;
@@ -39,98 +39,77 @@ function timeAndDate(){
 
 timeAndDate();
 
-let objchk1 = JSON.parse(localStorage.getItem('ckone')) ||   {days: 0, day_left:0, month:0, weeks:0, remdays:0, cash: 0};
-let objchk2 = JSON.parse(localStorage.getItem('cktwo')) ||   {days: 0, day_left:0, month:0, weeks:0, remdays:0, cash: 0};
-let objchk3 = JSON.parse(localStorage.getItem('ckthree')) || {days: 0, day_left:0, month:0, weeks:0, remdays:0, cash: 0};
 
-// DAYS SPENT METHOD
-function forall(dat, obj){
-     const today = new Date();
-     const dateofarrival = new Date(dat);
-      obj.days     = Math.round((today - dateofarrival) / (24 * 60 * 60 * 1000));
-      obj.day_left = 360 - obj.days;
-      obj.month    = Math.floor(obj.days / 30);
-      obj.weeks    = Math.floor(obj.days / 7);
-      obj.remdays  = Math.floor(obj.days % 7);
-      obj.cash     = obj.days * 35;
+// CALCULTE THE DATES DIFFERENCE NOTE: TIME ZONE ISSUE SOLVED BY USING
+//  'T12:00:00Z' OR 'T0:00:00Z' WHICH IS UTC
+// MEANING COODINATE UNIVERSAL TIME
+function calculate_checkday(day){
+  const today = new Date().getTime('T12:00:00Z');
+  const dateofarrival = new Date(day + 'T00:00:00Z').getTime();
+  return Math.round((today - dateofarrival) /(24 * 60 * 60 * 1000));
 }
 
-
-// CHALK 1 DAYS AND MONEY
-function chalkOneDays(){
-  forall('2023-03-30', objchk1);
-    document.querySelector('#ck1').innerHTML = `Days spent: ${objchk1.days}  Days left: ${objchk1.day_left}
-    <p> Total Months: ${objchk1.month} </p> 
-    <p> Total Weeks: ${objchk1.weeks}  </p>
-    <p> Remaining Day(s): ${objchk1.remdays} </p> 
-    Cash: $${objchk1.cash}`;
-    localStorage.setItem('ckone', JSON.stringify(objchk1));
- }
-
- chalkOneDays();
-
-
-// CHALK 2 DAYS AND MONEY
-function chalktwoDays(){
-    forall('2023-04-05', objchk2);
-    document.querySelector('#ck2').innerHTML = `Days spent: ${objchk2.days}  Days left: ${objchk2.day_left}
-    <p> Total Months: ${objchk2.month} </p>
-    <p> Total Weeks: ${objchk2.weeks}  </p>
-    <p> Remaining Day(s): ${objchk2.remdays} </p> 
-    Cash: $${objchk2.cash}`;
-    localStorage.setItem('cktwo', JSON.stringify(objchk2));
-}
-
-chalktwoDays();
-
-
-//CHALK 3 DAYS AND MONEY
-function chalkthreeDays(){
-    forall('2023-06-10', objchk3);
-    document.querySelector('#ck3').innerHTML = `Days spent: ${objchk3.days}  Days left: ${objchk3.day_left}
-    <p> Total Months: ${objchk3.month} </p> 
-    <p> Total Weeks: ${objchk3.weeks}  </p>
-    <p> Remaining Day(s): ${objchk3.remdays} </p> 
-    Cash: $${objchk3.cash}`;
-    localStorage.setItem('ckthree', JSON.stringify(objchk3)); 
-}
-
-chalkthreeDays();
-
-
- // TO CHANGE COLOR AND BACKGOUND OF THE PAGE 
- let dl =  document.querySelector('#dw-holder-div-btn');
- let dl_txt = document.querySelector('#dark-light-para');
- let button_div =  document.querySelector('#dw-holder-div');
- let bn = false;
- dl.addEventListener('click', ()=>{
-      if(!bn){
-        bn = true;
-       darkView();
-      }else{
-       lightView();
-        bn = false;
-      }
-  });
+// CALCULTE THE OHTER DETAILS - DAYS SPENTS, LEFT, MONTHS, WEEKS AND REMAINING DAYS
+function forAll_chalk(dateofarrival, ckn){
+   dsp = calculate_checkday(dateofarrival);
+   const dll  =  360 - dsp;
+   const m    =  Math.floor(dsp / 30);
+   const w    =  Math.floor(dsp / 7);
+   const r    =  Math.floor(dsp % 7);
   
-  // DARK ATTRIBUTE
+   document.querySelector(ckn).innerHTML = 
+   `Days spent: ${dsp}  Days left: ${dll}
+   <p> Total Months: ${m} </p> 
+   <p> Total Weeks: ${w}  </p>
+   <p> Remaining Day(s): ${r} </p>`;
+}
+
+// FOR CHALK ONE
+function chalk_1(){
+  forAll_chalk('2023-03-30', '#ck1');
+}
+chalk_1();
+
+// CHALK TWO
+function chalk_2(){
+  forAll_chalk('2023-04-05', '#ck2');
+}
+chalk_2();
+
+
+// CHALK THREE
+function chalk_3(){
+  forAll_chalk('2023-06-10', '#ck3');
+}
+chalk_3();
+
+// TO CHANGE COLOR AND BACKGOUND OF THE PAGE TO DARK OR LIGHT
+let dl =  document.querySelector('#dw-holder');
+let bn = false;
+dl.addEventListener('click', ()=>{
+     if(!bn){
+       bn = true;
+      darkView();
+     }else{
+      lightView();
+       bn = false;
+     }
+ });
+ 
+ // DARK ATTRIBUTE
 function darkView(){
-  dl.classList.add('dark-white-div-style1');
-  dl.classList.remove('dark-white-div-style2');
-  dl_txt.innerHTML = 'Light';
-  button_div.classList.add('dw-holder-div-style');
-  document.body.classList.add('body-style');
-  document.querySelector('.navigational-bar').classList.add('header-style');
-  document.querySelector('#second-nav-bar-dark-white-div').classList.add('second-nav-bar-style');
+    dl.classList.add('dark-white-div-style1');
+    dl.classList.remove('dark-white-div-style2');
+    document.body.classList.add('body-style');
+    document.querySelector('.navigational-bar').classList.add('header-style');
+    document.querySelector('#second-nav-bar-dark-white-div').classList.add('second-nav-bar-style');
 }
 
 // LIGHT ATTRIBRUTE
 function lightView(){
-  dl.classList.add('dark-white-div-style2');
-  dl.classList.remove('dark-white-div-style1'); 
-  dl_txt.innerHTML = 'Dark';
-  button_div.classList.remove('dw-holder-div-style');
-  document.body.classList.remove('body-style');
-  document.querySelector('.navigational-bar').classList.remove('header-style');
-  document.querySelector('#second-nav-bar-dark-white-div').classList.remove('second-nav-bar-style');
+    dl.classList.add('dark-white-div-style2');
+    dl.classList.remove('dark-white-div-style1'); 
+    document.body.classList.remove('body-style');
+    document.querySelector('.navigational-bar').classList.remove('header-style');
+    document.querySelector('#second-nav-bar-dark-white-div').classList.remove('second-nav-bar-style');
 }
