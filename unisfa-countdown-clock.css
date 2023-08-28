@@ -30,7 +30,7 @@ body{
    gap: 10px;
    font-size: x-large;
    font-weight: bold;
-   border-bottom: 1px solid #1D2A35;
+   border-bottom: 0.5px solid #26323d;
    padding: 10px;
 }
 
@@ -82,14 +82,7 @@ body{
     width: 30px;
     transition: 1.5s;
 }
-/* ROTATE 180 */
-.dark-white-div-style1{
-    transform: rotate(180deg);
-}
-/* ROTATE BACK TO 0 */
-.dark-white-div-style2{
-    transform: rotate(0deg);
-}
+
 
 main{
     display: flex;
@@ -98,25 +91,40 @@ main{
     align-items: center;
     align-self: center;
     gap: 10px;
+    margin-top: 45px;
 }
 
 /* THE DATE, TIME & CLOCK DIV  */
+.date-time-days-contianer{
+    border-radius: 50%;
+    border: 10px double #FD9F0A;
+    box-shadow: 1px 1px 3px white;
+    animation: clock 5s linear infinite; 
+    /* transform-origin: center; */
+}
+/* @keyframes clock{
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+} */
+
 .date-time-days-div{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    border: 12px solid #FD9F0A;
     background-color: #1D2A35;
-    box-shadow: 1px 1px 3px white;
     height: 500px;
     width: 500px;
-    margin-top: 45px;
     border-radius: 50%;
     font-size: x-large;
     color: white;
-    font-family:'Courier New', Courier, monospace;   
+    font-family:'Courier New', Courier, monospace;  
 }
+
 
 /* THE DAYS TEXT DIV */
 .countdown-days{
@@ -173,37 +181,41 @@ main{
 
 .jokes-motivational-conner-div{
     display: flex;
-    flex-flow: row wrap;
-    justify-content: space-evenly;
-    width: 80%;
+    flex-flow: column wrap;
+    padding: 15px;
     gap: 20px;
 }
 .motivation-div, .jokes-div{
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-self: center;
+    flex-flow: row wrap;
+    align-items: flex-start;
+    gap: 20px;
 }
 
 .title{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
     font-size: xx-large;
     border-left: 6px solid #007AFF;
     padding-left:30px;
     font-weight: bold;
     text-transform: uppercase;
+    width: 30%;
 }
 
 .mot-txt{
     text-align: justify;
     word-wrap: 5px;
     font-size: large;
-    line-height: 2.5;
+    line-height: 3;
     margin: 0;
 }
 
-.jokes-div video{
-   width: 310px;
-   box-shadow: 1px 1px 3px #007AFF ,-1.5px -1.5px 3px #007AFF;
+.jokes-div video, .img img{
+   width: 340px;
+   box-shadow: 2px 2px 5px #007AFF ,-2px -2px 5px #007AFF;
    border-radius: 10px;
 }
 
@@ -226,11 +238,14 @@ footer img{
 @media screen and (max-width: 560px) {
     /* THE DATE, TIME AND CLOCKS */
     .date-time-days-div{
-        height: 349px;
-        width: 347px;
+        height: 335px;
+        width: 335px;
     }
 
     .countdown-days{
         font-size: 55px;
     }
 }
+
+
+
