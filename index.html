@@ -3,22 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-WXL17CDDNC"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-WXL17CDDNC');
-</script>
     <title>unisfa count-down clock</title>
     <link rel="stylesheet" href="unisfa-countdown-clock.css">
     <link rel="icon" type="image/png" href="mylo2.png">
 </head>
 <body>
 
-   <!-- THE HEADER -->
+    <!-- THE HEADER -->
     <header>
 
         <div class="navigational-bar">
@@ -53,16 +44,21 @@
     <main>
               
         <!-- THE DATE, TIME & CLOCK DIV -->
-        <div class="date-time-days-div">
+        <div class="date-time-days-contianer">
 
-            <div class="countdown-days"> 365 DAYS </div>
-            
-            <div class="runningtime-div">
+            <div class="date-time-days-div">
+
+                <div class="countdown-days"> 365 DAYS </div>
+
+                <div class="runningtime-div">
                 <img src="bell.png" alt="">
                 <p class="countdown-time" id="count-down-time">10:00 </p>
-            </div>
+                </div>
+
+                <div  class="date" id="date"> Monday 12-09-2023 </div> 
             
-            <div  class="date" id="date"> Monday 12-09-2023 </div>    
+            </div>
+               
         </div>
         
         <!-- CHALK DETIALS -->
@@ -74,7 +70,7 @@
                 <!-- CHALK ONE TITLE AND IMAGE -->
                 <div class="days-div-title-img">
                     <img src="ck1.png" alt="">
-                    <p class="ck-txt"> CHALK 1</p>
+                    <p class="ck-txt">CHALK 1</p>
                 </div>
 
                 <!-- CHALK ONE DAYS N MONEY -->
@@ -113,18 +109,33 @@
 
             <!-- MOTIVATIONAL CONNER -->
             <div class="motivation-div">
-                <p class="title">Motivational qoute for the day</p>
-                <p class="mot-txt">Embrace each day with purpose and passion</p>
+                <p class="title"><img src="book.png" alt=""> Motivational qoutes </p>
+                <p class="mot-txt">
+                   &dbkarow; Success is not final, 
+                    Failure is not fatal, 
+                    It is the "<strong>COURAGE</strong>" 
+                    to continue that counts. 
+                    <br>
+                    by: Unknwon
+
+                    <br><br>
+
+                    &dbkarow; "Do what you can, with what you have, where you are."
+                    <br>
+                    by: Theodore Roosevelt
+                </p>
             </div>
 
             <!-- JOKES CONNER -->
             <div class="jokes-div">
-                <p class="title">Jokes Conner</p>
-                <p> <video src="v1.mp4" controls></video></p>
+                <p class="title"><img src="laugh.png" alt=""> Jokes Conner </p>
+                <p> <video src="fun.mp4" controls></video></p>
+                <p class="img"> <img src="fun2.jpg" alt=""></p>
             </div>
             
        </div> 
 
+     
      
     </main>
 
