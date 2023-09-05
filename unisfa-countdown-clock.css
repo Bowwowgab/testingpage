@@ -1,0 +1,188 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Verdana, sans-serif;
+    background-color: #f8f8f8;
+}
+
+/* THE NAV CONTAINER DIV */
+.navigational-bar{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    position: fixed;
+    width: 100%;
+    height: 50px;
+    font-size: x-large;
+    font-weight: bold;
+    background-color: white;
+}
+
+/* FLAG DIV */
+.ghflag-div{
+    display: flex;
+    align-items: center;
+    width: 30px;
+}
+.ghflag-div img{
+    width: 100%;
+}
+
+/* UNISFA TXT PARA */
+.unisfa-txt1{
+    display: none;
+}
+
+/* 365 DAYS DIV */
+.main-days-outer-container{
+    margin-top: 60px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    background: url('images/bgk.jpg') center/cover no-repeat;
+    height: 250px;
+}
+
+/* 365 DAYS TXT [PARA] */
+.days-365-txt{
+    height: 100px;
+    width:  350px;
+    background-color: red;
+    font-size: 67px;
+    font-weight: bold;
+    color: rgba(255, 255, 255, 0.822);
+}
+
+
+/* WRITE UP */
+.main-countdown-txt{
+    text-align: center;
+    font-style: italic;
+}
+
+/* CLOCK DIV */
+.main-clock-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    height: 400px;
+}
+.clock-outer-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 360px;
+    width: 360px;
+    border-radius: 50%;
+    box-shadow: 1px 1px 5px #DBE2E3, -1px -1px 5px #DBE2E3;
+}
+
+/* DATE AND TIME DIV */
+.date-time{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 15px;
+    font-size: 34px;
+    font-weight: bold;
+}
+.date-time p{
+    margin: 0;
+}
+
+.inner{
+    position: absolute;
+    height: 320px;
+    width: 320px;
+    border-radius: 50%;
+    border: 5px dotted rgba(0, 0, 0, 0.61);
+    animation: boat 60s linear infinite;
+}
+
+
+@keyframes boat {
+  0%{
+    transform: rotate(0deg);
+  }
+  100%{
+    transform: rotate(360deg);
+  }
+}
+
+/* CHALK DIV */
+.chalk-details{
+    margin-top: 40px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    color: #121D2F;
+    font-size: large;
+    font-weight: bold;
+}
+
+/* CHALK TITLE */
+.ck-title{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    height: 45px;
+    background-color: #121D2F;
+    color: white;
+    border-radius: 10px;
+    text-align: center;
+    text-decoration: underline;
+}
+
+.chalk-one, .chalk-two, .chalk-three{
+    padding: 20px;
+    border-radius: 10px; 
+    background-color: white;
+    box-shadow: 1.5px 1.5px 8px #DBE2E3;
+}
+
+.chalk-two img{
+   width: 25px;
+}
+
+
+.motivation{
+    background-color: white;
+    color: #121D2F;
+    font-size: large;
+    padding: 5px;
+}
+.title-motivation{
+    text-decoration: underline;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+footer{
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center; 
+    align-items: center;
+    text-align: center;
+    gap: 5px;
+    padding: 20px;
+    color: #DBE2E3;
+    background-color: black;
+}
+
+footer img{
+    width: 30px;
+    height: 30px;
+}
+
+
+
+
+
+
