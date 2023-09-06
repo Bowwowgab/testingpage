@@ -45,7 +45,7 @@ timeAndDate();
 //  'T12:00:00Z' OR 'T0:00:00Z' -> UTC
 function calculate_checkday(day){
     const utcDate1 = new Date(new Date().toISOString());
-    const utcDate2 = new Date(new Date(day + 'T00:00:00').toISOString());
+    const utcDate2 = new Date(new Date(day + 'T00:00:00Z').toISOString());
     return Math.round((utcDate1 - utcDate2) / (24 * 60 * 60 * 1000));
   }
   
