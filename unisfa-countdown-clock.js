@@ -59,6 +59,7 @@ function calculate_checkday(day){
     
      document.querySelector(ckn).innerHTML = 
      `Days spent: ${dsp} Days left: ${dll}
+     <p>Breakdown of days spent &dArr;</p>
      <p> Total Months:     ${m} </p> 
      <p> Total Weeks:      ${w} </p>
      <p> Remaining Day(s): ${r} </p>`;
