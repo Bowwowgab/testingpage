@@ -17,7 +17,8 @@ body{
     height: 60px;
     font-size: x-large;
     font-weight: bold;
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0.726);
+    backdrop-filter: blur(5px); 
     z-index: 99;
 }
 
@@ -38,19 +39,19 @@ body{
 
 /* 365 DAYS DIV */
 .main-days-outer-container{
-    margin-top: 40px;
+    margin-top: 55px;
     display: flex;
     justify-content: center;
-    text-align: center;
+    align-items: center;
     background: url('images/bgk.jpg') center/cover no-repeat;
-    height: 250px;
+    height: 300px;
 }
 
 /* 365 DAYS TXT [PARA] */
 .days-365-txt{
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
     height: 100px;
     width:  350px;
     background-color: red;
@@ -82,10 +83,10 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 355px;
-    width: 355px;
+    height: 330px;
+    width: 330px;
     border-radius: 50%;
-    box-shadow: 1px 1px 5px #DBE2E3, -1px -1px 5px #DBE2E3;
+    box-shadow: 1px 1px 6px #DBE2E3, -1px -1px 6px #DBE2E3;
 }
 
 /* DATE AND TIME DIV */
@@ -93,23 +94,31 @@ body{
     display: flex;
     flex-direction: column;
     text-align: center;
-    gap: 15px;
-    font-size: 30px;
     font-weight: bold;
 }
 .date-time p{
     margin: 0;
 }
 
-.inner{
+/* TIME , DATE & DAY */
+.time{
+  font-size: 40px;
+}
+
+.date, .day{
+    font-size: 25px;
+}
+
+
+/* THE ROTATING CLOCK DIV */
+.inner-rotating-div{
     position: absolute;
     height: 280px;
     width: 280px;
     border-radius: 50%;
-    border: 5px dotted rgba(0, 0, 0, 0.61);
-    animation: boat 60s linear infinite;
+    border: 10px dotted rgba(0, 0, 0, 0.61);
+    animation: boat 90s linear infinite;
 }
-
 
 @keyframes boat {
   0%{
@@ -130,7 +139,7 @@ body{
     align-items: center;
     gap: 30px;
     color: #121D2F;
-    font-size: large;
+    font-size: medium;
 }
 
 /* CHALK TITLE */
@@ -160,17 +169,6 @@ body{
 }
 
 
-.motivation{
-    background-color: white;
-    color: #121D2F;
-    font-size: medium;
-    padding: 15px;
-}
-.title-motivation{
-    text-decoration: underline;
-    font-weight: bold;
-    text-transform: uppercase;
-}
 footer{
     display: flex;
     flex-flow: column wrap;
@@ -181,6 +179,19 @@ footer{
     padding: 20px;
     color: #DBE2E3;
     background-color: black;
+    font-size: medium;
+}
+
+/* MOTIVIATION */
+.motivation{
+    background-color: white;
+    color: #121D2F;
+    padding: 15px;
+}
+.title-motivation{
+    text-decoration: underline;
+    font-weight: bold;
+    text-transform: uppercase;
 }
 
 footer img{
