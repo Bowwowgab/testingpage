@@ -14,7 +14,7 @@ body{
     top: 0;
     position: sticky;
     width: 100%;
-    height: 50px;
+    height: 60px;
     font-size: x-large;
     font-weight: bold;
     background-color: white;
@@ -37,7 +37,6 @@ body{
 
 /* 365 DAYS DIV */
 .main-days-outer-container{
-    margin-top: 50px;
     display: flex;
     justify-content: center;
     text-align: center;
@@ -78,8 +77,8 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 360px;
-    width: 360px;
+    height: 355px;
+    width: 355px;
     border-radius: 50%;
     box-shadow: 1px 1px 5px #DBE2E3, -1px -1px 5px #DBE2E3;
 }
@@ -90,7 +89,7 @@ body{
     flex-direction: column;
     text-align: center;
     gap: 15px;
-    font-size: 34px;
+    font-size: 30px;
     font-weight: bold;
 }
 .date-time p{
@@ -99,8 +98,8 @@ body{
 
 .inner{
     position: absolute;
-    height: 320px;
-    width: 320px;
+    height: 310px;
+    width: 310px;
     border-radius: 50%;
     border: 5px dotted rgba(0, 0, 0, 0.61);
     animation: boat 60s linear infinite;
@@ -127,7 +126,6 @@ body{
     gap: 30px;
     color: #121D2F;
     font-size: large;
-    font-weight: bold;
 }
 
 /* CHALK TITLE */
@@ -138,7 +136,7 @@ body{
     align-items: center;
     gap: 10px;
     height: 45px;
-    background-color: #121D2F;
+    background-color: #121d2fde;
     color: white;
     border-radius: 10px;
     text-align: center;
@@ -160,8 +158,8 @@ body{
 .motivation{
     background-color: white;
     color: #121D2F;
-    font-size: large;
-    padding: 5px;
+    font-size: medium;
+    padding: 15px;
 }
 .title-motivation{
     text-decoration: underline;
