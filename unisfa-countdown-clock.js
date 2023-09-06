@@ -3,7 +3,7 @@ function scroll(){
   const txt1 = document.querySelector('#unisfa-txt1');
   const txt2 = document.querySelector('#unisfa-txt2');
   window.addEventListener('scroll', ()=>{
-      if(window.scrollY > 90){
+      if(window.scrollY > 60){
           txt1.style.display = 'flex';
           txt2.style.display = 'none';
       }else{
