@@ -83,8 +83,8 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 330px;
-    width: 330px;
+    height: 320px;
+    width: 320px;
     border-radius: 50%;
     box-shadow: 1px 1px 6px #DBE2E3, -1px -1px 6px #DBE2E3;
 }
@@ -113,8 +113,8 @@ body{
 /* THE ROTATING CLOCK DIV */
 .inner-rotating-div{
     position: absolute;
-    height: 280px;
-    width: 280px;
+    height: 270px;
+    width: 270px;
     border-radius: 50%;
     border: 10px dotted rgba(0, 0, 0, 0.61);
     animation: boat 90s linear infinite;
