@@ -3,7 +3,7 @@ function scroll(){
   const txt1 = document.querySelector('#unisfa-txt1');
   const txt2 = document.querySelector('#unisfa-txt2');
   window.addEventListener('scroll', ()=>{
-      if(window.scrollY > 60){
+      if(window.scrollY > 90){
           txt1.style.display = 'flex';
           txt2.style.display = 'none';
       }else{
@@ -18,25 +18,21 @@ scroll();
 function timeAndDate(){
     let hour = new Date().getHours(), min =  new Date().getMinutes(), sec = new Date().getSeconds(), ampm = '';
     const dayname = new Date().toLocaleString('en-US', {weekday: 'long'});
-    let d = new Date().getDate();
-    let m = new Date().getMonth() + 1;
-    let y = new Date().getFullYear();
 
     // DETERMISE AM OR PM FOR THE TIME
     ampm = (hour >= 12)?  ampm = 'PM': ampm = 'AM';
 
     hour = (hour < 10) ? '0' + hour : hour;
     min  = (min  < 10) ? '0' + min  : min;
-    sec  = (sec  < 10) ? '0' + sec  : sec;
-    document.querySelector('#time').innerText = hour + ':'+ min + ':' + sec + ampm;
+    document.querySelector('#time').innerText = hour + ':'+ min  + ampm;
 
-   //DATE
-    d = (d < 10) ? '0' + d : d;
-    m = (m < 10) ? '0' + m : m;
-    y = (y < 10) ? '0' + y : y;
-    document.querySelector('#date').innerText = `${d}-${m}-${y}`;
-    document.querySelector('#day').innerText =`${dayname}`; 
+    //DATE
+    let date  = new Date();
+    let option = { day: 'numeric', month: 'short'};
     
+    document.querySelector('#date').innerText = `${dayname}, ${date.toLocaleDateString(undefined, option)}`;
+    document.querySelector('#day').innerText =`${date.getFullYear()}`; 
+   
     setInterval(()=>{timeAndDate()}, 1000);
 }
 timeAndDate();
@@ -59,7 +55,7 @@ function calculate_checkday(day){
     
      document.querySelector(ckn).innerHTML = 
      `Days spent: ${dsp} Days left: ${dll}
-     <p>Breakdown of days spent &dArr;</p>
+     <p id="breakdown">Breakdown of days spent &dArr;</p>
      <p> Total Months:     ${m} </p> 
      <p> Total Weeks:      ${w} </p>
      <p> Remaining Day(s): ${r} </p>`;
@@ -82,5 +78,3 @@ function calculate_checkday(day){
     setInterval(()=>{checkdate()}, 5000);
   }
   checkdate();
-
-
