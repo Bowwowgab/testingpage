@@ -5,21 +5,32 @@ body{
     background-color: #f8f8f8;
 }
 
-/* THE NAV CONTAINER DIV */
-.navigational-bar{
+
+/* FOR ALL BELOW DIVISIONS */
+header, .navigational-bar, .main-days-outer-container, .days-365-txt, 
+.main-clock-container, .clock-outer-container, .chalk-details, 
+.ck-title, .footer{
     display: flex;
-    flex-direction: row;
     justify-content: center;
     align-items: center;
-    top: 0;
-    position: fixed;
+}
+
+header{
     width: 100%;
+    position: fixed;
+    top: 0;
     height: 60px;
-    font-size: x-large;
-    font-weight: bold;
     background-color: rgba(255, 255, 255, 0.726);
+    border-bottom: 0.5px solid #DBE2E3;
     backdrop-filter: blur(5px); 
     z-index: 99;
+}
+ 
+/* THE NAV CONTAINER DIV */
+.navigational-bar{
+    flex-direction: row;
+    font-size: x-large;
+    font-weight: bold;
 }
 
 /* FLAG DIV */
@@ -40,31 +51,24 @@ body{
 /* 365 DAYS DIV */
 .main-days-outer-container{
     margin-top: 55px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     background: url('images/bgk.jpg') center/cover no-repeat;
     height: 300px;
 }
 
 /* 365 DAYS TXT [PARA] */
 .days-365-txt{
-    display: flex;
-    justify-content: center;
-    align-items: center;
     height: 100px;
     width:  350px;
     background-color: red;
-    font-size: 67px;
+    font-size: 60px;
     font-weight: bold;
     color: rgba(255, 255, 255, 0.822);
 }
 
-@media screen  and (max-width: 800px){
-    .days-365-txt{
-        font-size: 60px;
-    }
+main{
+    width: 100%;
 }
+
 /* WRITE UP */
 .main-countdown-txt{
     text-align: center;
@@ -73,18 +77,14 @@ body{
 
 /* CLOCK DIV */
 .main-clock-container{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    padding: 5px;
     background-color: white;
     height: 400px;
+    transition: 2s;
 }
 .clock-outer-container{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 320px;
-    width: 320px;
+    height: 310px;
+    width: 310px;
     border-radius: 50%;
     box-shadow: 1px 1px 6px #DBE2E3, -1px -1px 6px #DBE2E3;
 }
@@ -94,7 +94,6 @@ body{
     display: flex;
     flex-direction: column;
     text-align: center;
-    font-weight: bold;
 }
 .date-time p{
     margin: 0;
@@ -102,22 +101,28 @@ body{
 
 /* TIME , DATE & DAY */
 .time{
-  font-size: 30px;
+  font-size: 45px;
+  font-weight: bold;
+  font-family: monospace;
 }
-
-.date, .day{
-    font-size: 25px;
+.date{
+    font-size: 27px; 
+    
+}
+.day{
+    font-size: 30px;
 }
 
 
 /* THE ROTATING CLOCK DIV */
 .inner-rotating-div{
     position: absolute;
-    height: 270px;
-    width: 270px;
+    height: 245px;
+    width: 245px;
     border-radius: 50%;
     border: 10px dotted rgba(0, 0, 0, 0.61);
     animation: boat 90s linear infinite;
+    
 }
 
 @keyframes boat {
@@ -129,14 +134,27 @@ body{
   }
 }
 
+/* FOR THE CLOCK  */
+@media screen and (min-width: 500px) {
+
+    .clock-outer-container{
+        height: 400px;
+        width:  400px;
+    }
+
+    .inner-rotating-div{
+        height: 350px;
+        width:  350px;   
+    }
+
+
+}
+
 /* CHALK DIV */
 .chalk-details{
+    flex-flow: row wrap;
     margin-top: 50px;
     margin-bottom: 50px;
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: center;
-    align-items: center;
     gap: 30px;
     color: #121D2F;
     font-size: medium;
@@ -144,10 +162,7 @@ body{
 
 /* CHALK TITLE */
 .ck-title{
-    display: flex;
     flex-direction: row;
-    justify-content: center;
-    align-items: center;
     gap: 10px;
     height: 45px;
     background-color: #121d2fde;
@@ -168,18 +183,17 @@ body{
    width: 25px;
 }
 
-
 footer{
-    display: flex;
-    flex-flow: column wrap;
-    justify-content: center; 
-    align-items: center;
+    flex-flow: column wrap; 
     text-align: center;
     gap: 5px;
-    padding: 20px;
     color: #DBE2E3;
     background-color: black;
     font-size: medium;
+}
+
+footer img{
+    width: 30px;
 }
 
 /* MOTIVIATION */
@@ -193,14 +207,3 @@ footer{
     font-weight: bold;
     text-transform: uppercase;
 }
-
-footer img{
-    width: 30px;
-    height: 30px;
-}
-
-
-
-
-
-
