@@ -54,8 +54,9 @@ function calculate_checkday(day){
      const r   =  Math.floor(dsp % 7);
     
      document.querySelector(ckn).innerHTML = 
-     `Days spent: ${dsp} Days left: ${dll}
-     <p id="breakdown">Breakdown of days spent &dArr;</p>
+    `<p> Days spent: ${dsp} </p>
+     <p> Days left: ${dll}. </p>
+     <p class="breakdown">Breakdown of days spent &dArr;</p>
      <p> Total Months:     ${m} </p> 
      <p> Total Weeks:      ${w} </p>
      <p> Remaining Day(s): ${r} </p>`;
