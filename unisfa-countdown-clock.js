@@ -31,7 +31,7 @@ function timeAndDate(){
     let option = { day: 'numeric', month: 'short'};
     
     document.querySelector('#date').innerText = `${dayname}, ${date.toLocaleDateString(undefined, option)}`;
-    document.querySelector('#day').innerText =`${date.getFullYear()}`; 
+    document.querySelector('#year').innerText =`${date.getFullYear()}`; 
    
     setInterval(()=>{timeAndDate()}, 1000);
 }
