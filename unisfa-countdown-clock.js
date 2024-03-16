@@ -37,31 +37,49 @@ function timeAndDate(){
 }
 timeAndDate();
 
-// CALCULTE THE DATES DIFFERENCE NOTE: TIME ZONE ISSUE SOLVED BY USING
-//  'T12:00:00Z' OR 'T0:00:00Z' -> UTC
+// CALCULTE THE DATES DIFFERENCE NOTE: TIME ZONE ISSUE 
 function calculate_checkday(day){
     const utcDate1 = new Date(new Date().toISOString());
     const utcDate2 = new Date(new Date(day + 'T00:00:00Z').toISOString());
     return Math.round((utcDate1 - utcDate2) / (24 * 60 * 60 * 1000));
   }
   
-  // CALCULTE THE OHTER DETAILS - DAYS SPENTS, LEFT, MONTHS, WEEKS AND REMAINING DAYS
-  function forAll_chalk(dateofarrival, ckn){
+ // CALCULTE THE OHTER DETAILS - DAYS SPENTS, LEFT, MONTHS, WEEKS AND REMAINING DAYS
+  function forAll_chalk(dateofarrival, propdate, ckn, ckpro){
      dsp = calculate_checkday(dateofarrival);
      const dll =  360 - dsp;
      const m   =  Math.floor(dsp / 30);
      const w   =  Math.floor(dsp / 7);
-     const r   =  Math.floor(dsp % 7);
-    
-     document.querySelector(ckn).innerHTML = 
-    `<p> Days spent: ${dsp} </p>
-     <p> Days left: ${dll}  </p>
-     <p class="breakdown">Breakdown of days spent &dArr;</p>
-     <p> Total Months:     ${m} </p> 
-     <p> Total Weeks:      ${w} </p>
-     <p> Remaining Day(s): ${r} </p>`;
+      
+     //FOR THE 360 days
+     //CHECK THE REMAIN DAY 
+     if(dll >= 0){
+      document.querySelector(ckn).innerHTML = 
+      `<p> Days spent:   ${dsp} </p>
+       <p> Days left:    ${dll} (out of 365days) </p>
+       <p> Total Months: ${m} </p> 
+       <p> Total Weeks:  ${w} </p>`
+     }
+   
+     //FOR THE PROPOSED DATE
+     const proposeddate = calculate_checkday(propdate) * -1;
+     const prodml = Math.floor(proposeddate / 30);
+     const proddl = Math.floor(proposeddate % 30);
+     document.querySelector(ckpro).innerHTML = 
+     `<p> <strong><em>Days left with Proposed Date  &dArr;</em></strong></P>
+     <p> Days left:        ${proposeddate} </p>
+     <p> Total Months:     ${prodml} </p>
+     <p> Remaining Day(s): ${proddl} </p>`
   }
   
+  // CHALK ONE
+  function chalk_1(){ forAll_chalk('2023-03-30', '2024-05-19', '#ck1', "#ckpro1"); }
+  
+  // CHALK TWO
+  function chalk_2(){ forAll_chalk('2023-04-05', '2024-05-29', '#ck2', "#ckpro2"); }
+  
+  // CHALK THREE
+  function chalk_3(){  forAll_chalk('2023-05-26', '2024-06-12', '#ck3', "#ckpro3"); }
   // CHALK ONE
   function chalk_1(){ forAll_chalk('2023-03-30', '#ck1'); }
   
