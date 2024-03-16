@@ -2,14 +2,15 @@ body{
     margin: 0;
     padding: 0;
     font-family: 'Segoe UI', Tahoma, Verdana, sans-serif;
-    background-color: #f8f8f8;
 }
 
-
 /* FOR ALL BELOW DIVISIONS */
-header, .navigational-bar, .main-days-outer-container, .days-365-txt, 
-.main-clock-container, .clock-outer-container, .chalk-details, 
-.ck-title, .footer{
+header, .navigational-bar,
+.main-days-outer-container, 
+.days-365-txt, 
+.main-clock-container, 
+.clock-outer-container, 
+.chalk-details, .footer{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -67,27 +68,29 @@ header{
 }
 
 main{
-    width: 100%;
-}
+    background-color: #DBE2E3;
+}   
 
 /* WRITE UP */
 .main-countdown-txt{
     text-align: center;
     font-style: italic;
+    padding: 10px;
+    background-color: white;
 }
 
 /* CLOCK DIV */
 .main-clock-container{
-    padding: 5px;
-    background-color: white;
-    height: 400px;
+    padding: 20px;
+    height:  370px;
     transition: 2s;
+    background-color: white;
 }
 .clock-outer-container{
-    height: 310px;
-    width: 310px;
+    height: 300px;
+    width: 300px;
     border-radius: 50%;
-    box-shadow: 1px 1px 6px #DBE2E3, -1px -1px 6px #DBE2E3;
+    box-shadow: 1px 1px 6px #DBE2E3, -1px -1px 6px #DBE2E3; 
 }
 
 /* DATE AND TIME DIV */
@@ -96,7 +99,7 @@ main{
     flex-direction: column;
     text-align: center;
 }
-.date-time p{
+.date-time p, .main-countdown-txt p{
     margin: 0;
 }
 
@@ -118,13 +121,11 @@ main{
 /* THE ROTATING CLOCK DIV */
 .inner-rotating-div{
     position: absolute;
-    height: 245px;
-    width: 245px;
+    height: 250px;
+    width: 250px;
     border-radius: 50%;
     border: 10px dotted #B89354;
-    animation: boat 90s linear infinite;
-     /* border: 10px dotted rgba(0, 0, 0, 0.61); */
-    
+    animation: boat 90s linear infinite;    
 }
 
 @keyframes boat {
@@ -136,48 +137,32 @@ main{
   }
 }
 
-/* FOR THE CLOCK  */
-@media screen and (min-width: 500px) {
-
-    .clock-outer-container{
-        height: 400px;
-        width:  400px;
-    }
-
-    .inner-rotating-div{
-        height: 350px;
-        width:  350px;   
-    }
-
-
-}
-
 /* CHALK DIV */
 .chalk-details{
     flex-flow: row wrap;
-    padding: 50px 0 50px 0;
     gap: 30px;
     font-size: medium;
 }
 
 /* CHALK TITLE */
 .ck-title{
-    flex-direction: row;
-    gap: 10px;
-    height: 45px;
-    background-color: #121d2fde;
-    color: white;
-    border-radius: 10px;
-    text-align: center;
-    text-decoration: underline;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: -50px;
+    height: 40px;
+    width:  40px;
+    padding: 8px;
+    border-radius: 50%;
+    border: 2.5px solid white;
+    background-color: #121D2F;
 }
 
+
 .chalk-one, .chalk-two, .chalk-three{
-    padding: 20px;
-    border-radius: 10px; 
-    background-color: white;
-    box-shadow: 1.5px 1.5px 8px #DBE2E3;
-     /* box-shadow: 1.5px 1.5px 8px #B89354; */
+    padding: 24px;
+    border-radius: 10px;
+    border: 0.5px solid #DBE2E3; 
 }
 
 footer{
@@ -189,15 +174,16 @@ footer{
     font-size: medium;
 }
 
-footer img{
+footer img{ 
     width: 50px;
 }
 
 /* MOTIVIATION */
 .motivation{
-    background-color: white;
-    color: #121D2F;
+    color: black;
     padding: 15px;
+    background-color: #DBE2E3;
+    border-top:  0.3px solid rgba(63, 62, 62, 0.212);
 }
 .title-motivation{
     text-decoration: underline;
