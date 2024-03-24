@@ -59,6 +59,9 @@ function calculate_checkday(day){
        <p> Days left:    ${dll} (out of 365days) </p>
        <p> Total Months: ${m} </p> 
        <p> Total Weeks:  ${w} </p>`
+     }else{
+        document.querySelector(ckn).innerHTML = 
+        `<P><em> 🎉 Congratulation <br> You made 365 days,  hurray!!</em></P>`
      }
    
      //FOR THE PROPOSED DATE
