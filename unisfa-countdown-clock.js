@@ -53,7 +53,7 @@ function calculate_checkday(day){
       
      //FOR THE 360 days
      //CHECK THE REMAIN DAY 
-     if(dll >= 0){
+     if(dll > 0){
       document.querySelector(ckn).innerHTML = 
       `<p> Days spent:   ${dsp} </p>
        <p> Days left:    ${dll} (out of 365days) </p>
