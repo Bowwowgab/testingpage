@@ -79,10 +79,10 @@ function calculate_checkday(day){
   function chalk_1(){ forAll_chalk('2023-03-30', '2024-05-19', '#ck1', "#ckpro1"); }
   
   // CHALK TWO
-  function chalk_2(){ forAll_chalk('2023-04-05', '2024-05-29', '#ck2', "#ckpro2"); }
+  function chalk_2(){ forAll_chalk('2023-04-05', '2024-06-02', '#ck2', "#ckpro2"); }
   
   // CHALK THREE
-  function chalk_3(){  forAll_chalk('2023-05-26', '2024-06-12', '#ck3', "#ckpro3"); }
+  function chalk_3(){  forAll_chalk('2023-05-26', '2024-06-23', '#ck3', "#ckpro3"); }
   
   // CHECK THE DATE TO ENSURE GOOD SUBTRACTION OF DATE -> EVERY 5ms
   function checkdate(){
