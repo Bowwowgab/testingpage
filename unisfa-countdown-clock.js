@@ -12,13 +12,24 @@ function scroll(){
 }
 scroll();
 
-document.querySelectorAll('#check-cash-div').forEach(e =>{e.addEventListener('click', ()=>{
-    document.querySelector('#checker-outter-div').classList.toggle('checker-outter-div-style');
-    chselection.value = "";
-    chkdedution.value = "";  
-    result.innerHTML  = "";
+//TOP NAV CHECKER OPEN
+document.querySelector('#check-cash-div').addEventListener('click', ()=>{
+    document.querySelector('#checker-outter-div').classList.add('checker-outter-div-style');
+    clearinput();
   })
-});
+
+  //CHECKER CLOSE BUTTON
+  document.querySelector('#checker-close-btn').addEventListener('click', ()=>{
+    document.querySelector('#checker-outter-div').classList.remove('checker-outter-div-style');
+    clearinput();
+  })
+
+ //CLEARS THE INPUTS  
+function clearinput(){
+  chselection.value = "";
+  chkdedution.value = "";  
+  result.innerHTML  = "";
+}
 
 // COUNT DOWN CLCOK
 function timeAndDate(){
@@ -92,7 +103,7 @@ function calculate_checkday(day){
   function chalk_3(){  forAll_chalk('2023-05-26', '2024-06-23', '#ck3', "#ckpro3"); }
   
   // CHECK THE DATE TO ENSURE GOOD SUBTRACTION OF DATE -> EVERY 5ms
-  async function checkdate(){
+ function checkdate(){
     chalk_1();
     chalk_2();
     chalk_3();
