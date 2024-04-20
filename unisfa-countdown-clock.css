@@ -98,7 +98,7 @@ header{
     background-color: #F0F4F9;
 } 
 
-@media screen and (max-width: 768px) 
+@media screen and (max-width: 932px) 
 and (orientation:landscape) {
     .checker-entry-page{
         height: 100dvh; 
