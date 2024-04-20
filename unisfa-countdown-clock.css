@@ -5,7 +5,8 @@ body{
 }
 
 /* FOR ALL BELOW DIVISIONS */
-header, .navigational-bar,
+header, 
+.navigational-bar,
 .ghflag-unisfa-txt-div,
 .unisfa-txt-div,
 .main-days-outer-container, 
@@ -55,12 +56,15 @@ header{
 }
 
 /* CHECK $ MENU */
-.check-cash-div{
+.check-cash-div,
+.checker-close-btn{
     transform: rotate(90deg);
-    padding: 5px;
-    border-radius: 50%;
     cursor: pointer;
     font-size: 27px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    text-align: center;
 }
 
 /* CHECKER DIV */
@@ -94,8 +98,7 @@ header{
     background-color: #F0F4F9;
 } 
 
-
-@media (max-width: 768px) 
+@media screen and (max-width: 768px) 
 and (orientation:landscape) {
     .checker-entry-page{
         height: 100dvh; 
@@ -104,11 +107,12 @@ and (orientation:landscape) {
     }
 }
 
-.checker-close-btn{
-    padding: 20px;
-    margin-right: 40px;
-    font-size: 28px;
-    cursor: pointer;
+/* LINE 58 */
+.checker-title{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
 }
 
 .checker-note-warning,
@@ -149,7 +153,6 @@ and (orientation:landscape) {
     background-color: #339ef5;
     box-shadow: 1.5px 1.5px 8px #339ef5;
 }
-
 
 /* 365 DAYS DIV */
 .main-days-outer-container{
@@ -230,23 +233,24 @@ main{
     width: 240px;
     border-radius: 50%;
     border: 7px dashed #121d2fa9;
-    animation: boat 90s linear infinite;    
+    animation: boat 100s linear infinite;    
 }
 
-@keyframes boat {
+/* @keyframes boat {
   0%{
     transform: rotate(0deg);
   }
   100%{
     transform: rotate(360deg);
   }
-}
+} */
 
 
 
 /* CHALK DIV */
 .chalk-details{
     flex-flow: row wrap;
+    align-items: flex-start;
     gap: 30px;
     font-size: medium;
     background-color: #dbe2e3;
@@ -257,27 +261,23 @@ main{
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: -50px;
     height: 40px;
     width:  40px;
     padding: 8px;
     border-radius: 50%;
-    border: 2.5px solid white;
+    border: 3px solid white;
     background-color: #121D2F;
 }
-
 
 .chalk-div{
     padding: 16px;
     border-radius: 16px;
     border: 0.5px solid #DBE2E3; 
-    height: 300px;
 }
 
 footer{
     flex-flow: column wrap; 
     text-align: center;
-    gap: 5px;
     color: #DBE2E3;
     background-color: black;
     font-size: medium;
