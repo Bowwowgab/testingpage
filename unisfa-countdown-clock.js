@@ -1,35 +1,6 @@
-
 var chselection = document.querySelector('#checker-ckselection');
 var chkdedution = document.querySelector('#checker-dedution');
 var result = document.querySelector('#checker-result');
-
-//MAKE THE SWITCH DIV FIXED AT THE TOP WHEN SCROLLING
-function scroll(){
-  var txt = document.querySelector('#unisfa-batt');
-  window.addEventListener('scroll', ()=>{
-    (window.scrollY > 10)? txt.style.display = 'none': txt.style.display = 'flex';
-  });
-}
-scroll();
-
-//TOP NAV CHECKER OPEN
-document.querySelector('#check-cash-div').addEventListener('click', ()=>{
-    document.querySelector('#checker-outter-div').classList.add('checker-outter-div-style');
-    clearinput();
-  })
-
-  //CHECKER CLOSE BUTTON
-  document.querySelector('#checker-close-btn').addEventListener('click', ()=>{
-    document.querySelector('#checker-outter-div').classList.remove('checker-outter-div-style');
-    clearinput();
-  })
-
- //CLEARS THE INPUTS  
-function clearinput(){
-  chselection.value = "";
-  chkdedution.value = "";  
-  result.innerHTML  = "";
-}
 
 // COUNT DOWN CLCOK
 function timeAndDate(){
@@ -49,10 +20,8 @@ function timeAndDate(){
     
     document.querySelector('#date').innerText = `${dayname}, ${date.toLocaleDateString(undefined, option)}`;
     document.querySelector('#year').innerText =`${date.getFullYear()}`; 
-   
-    setInterval(()=>{timeAndDate()}, 1000);
 }
-timeAndDate();
+setInterval(()=>{timeAndDate()}, 1000);
 
 // CALCULTE THE DATES DIFFERENCE NOTE: TIME ZONE ISSUE SOLVED BY USING
 //  'T12:00:00Z' OR 'T0:00:00Z' -> UTC
@@ -103,13 +72,40 @@ function calculate_checkday(day){
   function chalk_3(){  forAll_chalk('2023-05-26', '2024-06-23', '#ck3', "#ckpro3"); }
   
   // CHECK THE DATE TO ENSURE GOOD SUBTRACTION OF DATE -> EVERY 5ms
- function checkdate(){
+  function checkdate(){
     chalk_1();
     chalk_2();
     chalk_3();
-    setInterval(()=>{checkdate()}, 5000);
   }
-  checkdate();
+  setInterval(()=>{checkdate()}, 5000);
+
+//MAKE THE SWITCH DIV FIXED AT THE TOP WHEN SCROLLING
+function scroll(){
+  var txt = document.querySelector('#unisfa-batt');
+  window.addEventListener('scroll', ()=>{
+    (window.scrollY > 10)? txt.style.display = 'none': txt.style.display = 'flex';
+  });
+}
+scroll();
+
+//TOP NAV CHECKER OPEN
+document.querySelector('#check-cash-div').addEventListener('click', ()=>{
+  document.querySelector('#checker-outter-div').classList.add('checker-outter-div-style');
+  clearinput();
+})
+
+//CHECKER CLOSE BUTTON
+document.querySelector('#checker-close-btn').addEventListener('click', ()=>{
+  document.querySelector('#checker-outter-div').classList.remove('checker-outter-div-style');
+  clearinput();
+})
+
+//CLEARS THE INPUTS  
+function clearinput(){
+chselection.value = "";
+chkdedution.value = "";  
+result.innerHTML  = "";
+}
 
 //FOR THE DEDUTION ONLY - DECIMAL 
 chkdedution.addEventListener('keypress', (event) =>{
@@ -119,8 +115,7 @@ chkdedution.addEventListener('keypress', (event) =>{
       !isFinite(key)  // Allow digits
   ) {
       event.preventDefault();
-  }
-  
+  }  
 });
 
 // CLEARS THE RESULT WHEN BACKSPACE IS PRESS
