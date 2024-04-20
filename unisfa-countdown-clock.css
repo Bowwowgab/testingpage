@@ -1,16 +1,19 @@
 body{
     margin: 0;
     padding: 0;
-    font-family: 'Segoe UI', Tahoma, Verdana, sans-serif;
+    font-family: sans-serif;
 }
 
 /* FOR ALL BELOW DIVISIONS */
 header, .navigational-bar,
+.ghflag-unisfa-txt-div,
+.unisfa-txt-div,
 .main-days-outer-container, 
 .days-365-txt, 
 .main-clock-container, 
 .clock-outer-container, 
-.chalk-details, .footer{
+.chalk-details, 
+.footer{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -29,11 +32,13 @@ header{
  
 /* THE NAV CONTAINER DIV */
 .navigational-bar{
-    flex-direction: row;
-    font-size: x-large;
+    width: 100%;
+    font-size: larger;
     font-weight: bold;
+    justify-content: space-between;
 }
 
+/* GH FLAG & UNISFA TXT DIV */
 /* FLAG DIV */
 .ghflag-div{
     display: flex;
@@ -45,9 +50,106 @@ header{
 }
 
 /* UNISFA TXT PARA */
-.unisfa-txt1{
-    display: none;
+#unisfa-batt{ 
+    padding-right: 5px;
 }
+
+/* CHECK $ MENU */
+.check-cash-div{
+    transform: rotate(90deg);
+    padding: 5px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 27px;
+}
+
+/* CHECKER DIV */
+.checker-outter-div{
+    display: none;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    left: 0;
+    top: 0; 
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.278);
+}
+
+.checker-outter-div-style{
+    display: flex;
+}
+
+.checker-entry-page,
+.checker-input-session{
+    display: flex;
+    flex-direction: column;
+}
+
+.checker-entry-page{
+    width: 330px; 
+    flex-shrink: 0;
+    font-size: small;
+    background-color: #F0F4F9;
+} 
+
+
+@media screen and (max-width: 687px) 
+and (orientation:landscape) {
+    .checker-entry-page{
+        height: 100vh; 
+        width:  100%; 
+        overflow-y: auto;
+    }
+}
+
+.checker-close-btn{
+    padding: 20px;
+    margin-right: 40px;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+.checker-note-warning,
+.checker-input-session{
+    padding: 20px;
+}
+
+.checker-note-warning{
+    color: rgba(255, 0, 0, 0.587);
+    text-align: justify;
+    font-size: small;
+    border-bottom: 0.5px solid white;
+}
+
+.checker-input-session input, select{
+    outline: none;
+    border: 1px solid #ddd;
+    width: 270px;
+    height: 34px;
+    font-size: large;
+    font-weight: bold; 
+    border-radius: 16px;
+}
+.checker-input-session input:focus, 
+.checker-input-session select:focus{
+    border-color: #339ef5;
+}
+
+.checker-result{
+    color: green;
+    font-size: large;
+    font-weight: bold;
+}
+
+#checker-result-btn{
+    color: white;
+    height: 40px;
+    background-color: #339ef5;
+    box-shadow: 1.5px 1.5px 8px #339ef5;
+}
+
 
 /* 365 DAYS DIV */
 .main-days-outer-container{
@@ -60,15 +162,18 @@ header{
 /* 365 DAYS TXT [PARA] */
 .days-365-txt{
     height: 100px;
-    width:  350px;
-    background-color: red;
-    font-size: 60px;
+    width:  340px;
+    background: #FF0000;
+    font-size: 55px;
     font-weight: bold;
+    border-radius: 8px;
     color: rgba(255, 255, 255, 0.822);
 }
 
 main{
-    background-color: #DBE2E3;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
 }   
 
 /* WRITE UP */
@@ -90,7 +195,7 @@ main{
     height: 300px;
     width: 300px;
     border-radius: 50%;
-    box-shadow: 1px 1px 6px #DBE2E3, -1px -1px 6px #DBE2E3; 
+    box-shadow: 1px 1px 15px #DBE2E3, -1px -1px 15px #DBE2E3; 
 }
 
 /* DATE AND TIME DIV */
@@ -121,10 +226,10 @@ main{
 /* THE ROTATING CLOCK DIV */
 .inner-rotating-div{
     position: absolute;
-    height: 250px;
-    width: 250px;
+    height: 240px;
+    width: 240px;
     border-radius: 50%;
-    border: 10px dotted #B89354;
+    border: 7px dashed #121d2fa9;
     animation: boat 90s linear infinite;    
 }
 
@@ -137,11 +242,14 @@ main{
   }
 }
 
+
+
 /* CHALK DIV */
 .chalk-details{
     flex-flow: row wrap;
     gap: 30px;
     font-size: medium;
+    background-color: #dbe2e3;
 }
 
 /* CHALK TITLE */
@@ -160,10 +268,10 @@ main{
 
 
 .chalk-div{
-    padding: 24px;
-    border-radius: 10px;
+    padding: 16px;
+    border-radius: 16px;
     border: 0.5px solid #DBE2E3; 
-    height: 390px;
+    height: 300px;
 }
 
 footer{
