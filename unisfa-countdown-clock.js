@@ -1,18 +1,24 @@
+
+var chselection = document.querySelector('#checker-ckselection');
+var chkdedution = document.querySelector('#checker-dedution');
+var result = document.querySelector('#checker-result');
+
 //MAKE THE SWITCH DIV FIXED AT THE TOP WHEN SCROLLING
 function scroll(){
-  const txt1 = document.querySelector('#unisfa-txt1');
-  const txt2 = document.querySelector('#unisfa-txt2');
+  var txt = document.querySelector('#unisfa-batt');
   window.addEventListener('scroll', ()=>{
-      if(window.scrollY > 90){
-          txt1.style.display = 'flex';
-          txt2.style.display = 'none';
-      }else{
-          txt1.style.display = 'none';
-          txt2.style.display = 'flex';
-      }
+    (window.scrollY > 10)? txt.style.display = 'none': txt.style.display = 'flex';
   });
 }
 scroll();
+
+document.querySelectorAll('#check-cash-div').forEach(e =>{e.addEventListener('click', ()=>{
+    document.querySelector('#checker-outter-div').classList.toggle('checker-outter-div-style');
+    chselection.value = "";
+    chkdedution.value = "";  
+    result.innerHTML  = "";
+  })
+});
 
 // COUNT DOWN CLCOK
 function timeAndDate(){
@@ -27,7 +33,7 @@ function timeAndDate(){
     document.querySelector('#time').innerText = hour + ':'+ min  + ampm;
 
     //DATE
-    let date  = new Date();
+    let date = new Date();
     let option = { day: 'numeric', month: 'short'};
     
     document.querySelector('#date').innerText = `${dayname}, ${date.toLocaleDateString(undefined, option)}`;
@@ -37,14 +43,15 @@ function timeAndDate(){
 }
 timeAndDate();
 
-// CALCULTE THE DATES DIFFERENCE NOTE: TIME ZONE ISSUE 
+// CALCULTE THE DATES DIFFERENCE NOTE: TIME ZONE ISSUE SOLVED BY USING
+//  'T12:00:00Z' OR 'T0:00:00Z' -> UTC
 function calculate_checkday(day){
     const utcDate1 = new Date(new Date().toISOString());
     const utcDate2 = new Date(new Date(day + 'T00:00:00Z').toISOString());
     return Math.round((utcDate1 - utcDate2) / (24 * 60 * 60 * 1000));
   }
   
- // CALCULTE THE OHTER DETAILS - DAYS SPENTS, LEFT, MONTHS, WEEKS AND REMAINING DAYS
+  // CALCULTE THE OHTER DETAILS - DAYS SPENTS, LEFT, MONTHS, WEEKS AND REMAINING DAYS
   function forAll_chalk(dateofarrival, propdate, ckn, ckpro){
      dsp = calculate_checkday(dateofarrival);
      const dll =  360 - dsp;
@@ -55,10 +62,10 @@ function calculate_checkday(day){
      //CHECK THE REMAIN DAY 
      if(dll > 0){
       document.querySelector(ckn).innerHTML = 
-      `<p> Days spent:   ${dsp} </p>
-       <p> Days left:    ${dll} (out of 365days) </p>
-       <p> Total Months: ${m} </p> 
-       <p> Total Weeks:  ${w} </p>`
+        `<p> Days spent:   ${dsp} </p>
+         <p> Days left:    ${dll} (out of 365days) </p>
+         <p> Total Months: ${m} </p> 
+         <p> Total Weeks:  ${w} </p>`
      }else{
         document.querySelector(ckn).innerHTML = 
         `<P><em> 🎉 Congratulation <br> You made 365 days,  hurray!!</em></P>`
@@ -85,10 +92,71 @@ function calculate_checkday(day){
   function chalk_3(){  forAll_chalk('2023-05-26', '2024-06-23', '#ck3', "#ckpro3"); }
   
   // CHECK THE DATE TO ENSURE GOOD SUBTRACTION OF DATE -> EVERY 5ms
-  function checkdate(){
+  async function checkdate(){
     chalk_1();
     chalk_2();
     chalk_3();
     setInterval(()=>{checkdate()}, 5000);
   }
   checkdate();
+
+//FOR THE DEDUTION ONLY - DECIMAL 
+chkdedution.addEventListener('keypress', (event) =>{
+  var key = event.key;
+  if (
+      (key != '.' || this.value.indexOf('.') != -1) && // Allow only one decimal point
+      !isFinite(key)  // Allow digits
+  ) {
+      event.preventDefault();
+  }
+  
+});
+
+// CLEARS THE RESULT WHEN BACKSPACE IS PRESS
+chkdedution.addEventListener('keydown', (event)=> {
+  if (event.key === 'Backspace') result.innerHTML = '';
+});
+
+// THE CASH RESULT METHOD
+document.querySelector('#checker-result-btn').addEventListener('click', ()=>{
+    if(chselection.value !== "" && chkdedution.value >=0 && chkdedution.value !== ""){
+      switch (chselection.value) {
+
+         //CK 1
+          case "2023-03-30":{
+          result.innerHTML = `Cash earn: $${((calculate_checkday(chselection.value) * 35) - chkdedution.value).toLocaleString()}`;
+          break 
+          }
+
+          //CK 2
+          case "2023-04-05":{
+            result.innerHTML = `Cash earn: $${(calculate_checkday(chselection.value) * 35) - chkdedution.value}`;
+            break
+          }
+
+          //CK 3
+          case "2023-05-26":{
+            result.innerHTML = `Cash earn: $${(calculate_checkday(chselection.value) * 35) - chkdedution.value}`;
+            break;
+          }
+
+          default: result.innerHTML = "0.00";
+      }
+
+    }else{
+      result.innerHTML = "";
+    }
+});
+
+
+//FOR THE CK SELECTION
+var options = [
+    {value: "2023-03-30", text: "CHALK 1"},
+    {value: "2023-04-05", text: "CHALK 2"},
+    {value: "2023-05-26", text: "CHALK 3"}
+];
+
+options.forEach((optionData)=> {
+    var option = new Option(optionData.text, optionData.value);
+    chselection.add(option);
+});
