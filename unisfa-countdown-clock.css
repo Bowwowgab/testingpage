@@ -1,7 +1,8 @@
 body{
     margin: 0;
     padding: 0;
-    font-family: sans-serif;
+    font-family: sans-serif; 
+    color: #504c4c;
 }
 
 /* FOR ALL BELOW DIVISIONS */
@@ -24,10 +25,10 @@ header{
     width: 100%;
     position: fixed;
     top: 0;
-    height: 60px;
+    height: 60px; 
     background-color: rgba(255, 255, 255, 0.726);
     border-bottom: 0.5px solid #DBE2E3;
-    backdrop-filter: blur(5px); 
+    backdrop-filter: blur(10px); 
     z-index: 99;
 }
  
@@ -92,17 +93,20 @@ header{
 }
 
 .checker-entry-page{
-    width: 330px; 
+    width: 280px; 
     flex-shrink: 0;
     font-size: small;
-    background-color: white;
+    padding: 10px;
+    border-radius: 16px;
+    background-color: whitesmoke;
+    box-shadow: 1px 1px 4px #5d5e5f;
 } 
 
 @media screen and (max-width: 932px) 
 and (orientation:landscape) {
     .checker-entry-page{
         height: 100dvh; 
-        width:  100%; 
+        width:  60%; 
         overflow-y: auto;
     }
 }
@@ -115,15 +119,9 @@ and (orientation:landscape) {
     align-items: center;
 }
 
-.checker-note-warning,
-.checker-input-session{
-    padding: 20px;
-}
-
 .checker-note-warning{
     color: rgba(255, 0, 0, 0.587);
-    text-align: justify;
-    border-bottom: 0.5px solid white;
+    font-size: small;
 }
 
 .checker-input-session input, select{
@@ -153,51 +151,49 @@ and (orientation:landscape) {
     box-shadow: 1.5px 1.5px 8px #339ef5;
 }
 
-/* 365 DAYS DIV */
-.main-days-outer-container{
-    flex-direction: column;
-    margin-top: 55px;
-    background: url('images/bgk.jpg') center/cover no-repeat;
-    height: 400px;
-}
-
-/* 365 DAYS TXT [PARA] */
-.days-365-txt{
-    height: 100px;
-    width:  340px;
-    background: #FF0000;
-    font-size: 55px;
-    font-weight: bold;
-    border-radius: 8px;
-    color: rgba(255, 255, 255, 0.822);
-}
-
 main{
     display: flex;
     flex-direction: column;
     gap: 30px;
 }   
 
+/* 365 DAYS DIV */
+.main-days-outer-container{
+    flex-direction: column;
+    margin-top: 65px;
+    height: 450px;
+    color: white;
+    background-blend-mode: multiply;
+    background:url('images/bgk.jpg') center/cover no-repeat  #7F181B;
+}
+
+/* 365 DAYS TXT [PARA] */
+.days-365-txt{ 
+    text-align: center;
+    font-size: 50vw;
+    width: 90%;
+    overflow: hidden;
+    font-weight: bolder;
+}
+
 /* WRITE UP */
 .main-countdown-txt{
     text-align: center;
     font-style: italic;
     padding: 10px;
-    background-color: white;
+    letter-spacing: 7px;
 }
 
 /* CLOCK DIV */
 .main-clock-container{
-    padding: 20px;
     height:  370px;
-    transition: 2s;
     background-color: white;
 }
 .clock-outer-container{
     height: 300px;
     width: 300px;
     border-radius: 50%;
-    box-shadow: 1px 1px 15px #DBE2E3, -1px -1px 15px #DBE2E3; 
+    box-shadow: 1px 1px 20px #DBE2E3, -1px -1px 20px #DBE2E3; 
 }
 
 /* DATE AND TIME DIV */
@@ -206,7 +202,8 @@ main{
     flex-direction: column;
     text-align: center;
 }
-.date-time p, .main-countdown-txt p{
+.date-time p, 
+.main-countdown-txt p{
     margin: 0;
 }
 
@@ -218,7 +215,6 @@ main{
 }
 .date{
     font-size: 24px; 
-    
 }
 .day{
     font-size: 30px;
@@ -228,11 +224,11 @@ main{
 /* THE ROTATING CLOCK DIV */
 .inner-rotating-div{
     position: absolute;
-    height: 240px;
-    width: 240px;
+    height: 250px;
+    width: 250px;
     border-radius: 50%;
-    border: 7px dashed #121d2fa9;
-    animation: boat 100s linear infinite;    
+    border: 7px double #7F181B;
+    /* animation: boat 100s linear infinite;     */
 }
 
 /* @keyframes boat {
@@ -244,15 +240,17 @@ main{
   }
 } */
 
-
+.main-letgo-txt{
+    font-size: 6em;
+    letter-spacing: 15px;
+}
 
 /* CHALK DIV */
 .chalk-details{
     flex-flow: row wrap;
     align-items: flex-start;
-    gap: 30px;
-    font-size: medium;
-    background-color: #dbe2e3;
+    gap: 45px;
+    font-size: 16px;
 }
 
 /* CHALK TITLE */
@@ -262,6 +260,7 @@ main{
     justify-content: center;
     height: 40px;
     width:  40px;
+    margin-top: -35px;
     padding: 8px;
     border-radius: 50%;
     border: 3px solid white;
@@ -269,29 +268,25 @@ main{
 }
 
 .chalk-div{
+    height: 375px;
     padding: 16px;
     border-radius: 16px;
-    border: 0.5px solid #DBE2E3; 
+    background-color: whitesmoke;
+    box-shadow: 1px 1px 17px #DBE2E3; 
 }
 
 footer{
-    flex-flow: column wrap; 
+    margin-top: 40px;
+    flex-direction: column; 
     text-align: center;
     color: #DBE2E3;
-    background-color: black;
-    font-size: small;
-}
-
-footer img{ 
-    width: 50px;
+    font-size: 14px;
 }
 
 /* MOTIVIATION */
 .motivation{
     color: black;
     padding: 15px;
-    background-color: #DBE2E3;
-    border-top:  0.3px solid rgba(63, 62, 62, 0.212);
 }
 .title-motivation{
     text-decoration: underline;
@@ -302,4 +297,5 @@ footer img{
 .dev-div{
     padding: 10px;
     font-size: small;
+    background-color: #121D2F;
 }
