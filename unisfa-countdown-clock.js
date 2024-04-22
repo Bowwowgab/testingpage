@@ -131,19 +131,19 @@ document.querySelector('#checker-result-btn').addEventListener('click', ()=>{
 
          //CK 1
           case "2023-03-30":{
-          result.innerHTML = `Cash earn: $${((calculate_checkday(chselection.value) * 35) - chkdedution.value).toLocaleString()}`;
+          result.innerHTML = `Cash earn currently: $${((calculate_checkday(chselection.value) * 35) - chkdedution.value).toLocaleString()}`;
           break 
           }
 
           //CK 2
           case "2023-04-05":{
-            result.innerHTML = `Cash earn: $${(calculate_checkday(chselection.value) * 35) - chkdedution.value}`;
+            result.innerHTML = `Cash earn currently: $${(calculate_checkday(chselection.value) * 35) - chkdedution.value}`;
             break
           }
 
           //CK 3
           case "2023-05-26":{
-            result.innerHTML = `Cash earn: $${(calculate_checkday(chselection.value) * 35) - chkdedution.value}`;
+            result.innerHTML = `Cash earn currently: $${(calculate_checkday(chselection.value) * 35) - chkdedution.value}`;
             break;
           }
 
