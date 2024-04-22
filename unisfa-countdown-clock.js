@@ -76,8 +76,9 @@ function calculate_checkday(day){
     chalk_1();
     chalk_2();
     chalk_3();
+    setInterval(()=>{checkdate()}, 5000);
   }
-  setInterval(()=>{checkdate()}, 5000);
+checkdate();
 
 //MAKE THE SWITCH DIV FIXED AT THE TOP WHEN SCROLLING
 function scroll(){
