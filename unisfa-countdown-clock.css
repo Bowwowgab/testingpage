@@ -129,7 +129,7 @@ and (orientation:landscape) {
     border: 1px solid #ddd;
     width: 265px;
     height: 30px;
-    font-size: small;
+    font-size: large;
     font-weight: bold; 
     border-radius: 16px;
 }
