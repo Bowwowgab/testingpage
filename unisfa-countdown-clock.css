@@ -127,9 +127,9 @@ and (orientation:landscape) {
 .checker-input-session input, select{
     outline: none;
     border: 1px solid #ddd;
-    width: 270px;
-    height: 34px;
-    font-size: large;
+    width: 265px;
+    height: 30px;
+    font-size: small;
     font-weight: bold; 
     border-radius: 16px;
 }
