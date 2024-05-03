@@ -231,6 +231,11 @@ main{
     /* animation: boat 100s linear infinite;     */
 }
 
+.congratutionalMsg{
+ word-spacing: 1.5px;
+ line-height: 30px;
+}
+
 /* @keyframes boat {
   0%{
     transform: rotate(0deg);
