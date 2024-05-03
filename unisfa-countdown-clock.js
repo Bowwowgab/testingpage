@@ -48,7 +48,7 @@ function calculate_checkday(day){
          <p> Total Weeks:  ${w} </p>`
      }else{
         document.querySelector(ckn).innerHTML = 
-        `<P>
+        `<P class="congratutionalMsg">
             <em>🎉 🎉Wow! Congratulations<br> 
                 You have completed full year of work.
                 Your dediction and hard work 
