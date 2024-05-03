@@ -55,7 +55,7 @@ function calculate_checkday(day){
                 have truly paid off. 
                 Keep up the great work!
             </em>
-       `</P>
+       </P>`
      }
    
      //FOR THE PROPOSED DATE
