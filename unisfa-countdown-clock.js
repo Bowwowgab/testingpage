@@ -48,18 +48,34 @@ function calculate_checkday(day){
          <p> Total Weeks:  ${w} </p>`
      }else{
         document.querySelector(ckn).innerHTML = 
-        `<P><em> 🎉 Congratulation <br> You made 365 days,  hurray!!</em></P>`
+        `<P>
+            <em>🎉 🎉Wow! Congratulations<br> 
+                You have completed full year of work.
+                Your dediction and hard work 
+                have truly paid off. 
+                Keep up the great work!
+            </em>
+       `</P>
      }
    
      //FOR THE PROPOSED DATE
      const proposeddate = calculate_checkday(propdate) * -1;
      const prodml = Math.floor(proposeddate / 30);
      const proddl = Math.floor(proposeddate % 30);
-     document.querySelector(ckpro).innerHTML = 
-     `<p> <strong>Days left with Proposed Date  &dArr;</strong></P>
-     <p> Days left:        ${proposeddate} </p>
-     <p> Total Months:     ${prodml} </p>
-     <p> Remaining Day(s): ${proddl} </p>`
+     var chmonth = document.querySelector(ckpro);
+     if(prodml == 0 ){
+      chmonth.innerHTML = 
+        `<p> <strong>Days left with Proposed Date  &dArr;</strong></P>
+         <p> Days left: ${proposeddate} </p>
+       `
+     }else{
+      chmonth.innerHTML = 
+      `<p> <strong>Days left with Proposed Date  &dArr;</strong></P>
+       <p> Days left:        ${proposeddate} </p>
+       <p> Total Months:     ${prodml} </p>
+       <p> Remaining Day(s): ${proddl} </p>` 
+     }
+     
   }
   
   // CHALK ONE
@@ -136,13 +152,13 @@ document.querySelector('#checker-result-btn').addEventListener('click', ()=>{
 
           //CK 2
           case "2023-04-05":{
-            result.innerHTML = `Cash earn currently: $${(calculate_checkday(chselection.value) * 35) - chkdedution.value}`;
+            result.innerHTML = `Cash earn currently: $${((calculate_checkday(chselection.value) * 35) - chkdedution.value).toLocaleString()}`;
             break
           }
 
           //CK 3
           case "2023-05-26":{
-            result.innerHTML = `Cash earn currently: $${(calculate_checkday(chselection.value) * 35) - chkdedution.value}`;
+            result.innerHTML = `Cash earn currently: $${((calculate_checkday(chselection.value) * 35) - chkdedution.value).toLocaleString()}`;
             break;
           }
 
