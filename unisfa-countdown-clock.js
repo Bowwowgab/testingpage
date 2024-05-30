@@ -63,7 +63,7 @@ function calculate_checkday(day){
      const prodml = Math.floor(proposeddate / 30);
      const proddl = Math.floor(proposeddate % 30);
      var chmonth = document.querySelector(ckpro);
-     if(prodml == 0 ){
+     if(prodml === 0 ){
       chmonth.innerHTML = 
         `<p> <strong>Days left with Proposed Date  &dArr;</strong></P>
          <p> Days left: ${proposeddate} </p>
@@ -79,7 +79,7 @@ function calculate_checkday(day){
   }
   
   // CHALK ONE
- // function chalk_1(){ forAll_chalk('2023-03-30', '2024-05-19', '#ck1', "#ckpro1"); }
+ function chalk_1(){ forAll_chalk('2023-03-30', '2024-05-19', '#ck1', "#ckpro1"); }
   
   // CHALK TWO
   function chalk_2(){ forAll_chalk('2023-04-05', '2024-06-02', '#ck2', "#ckpro2"); }
@@ -173,7 +173,7 @@ document.querySelector('#checker-result-btn').addEventListener('click', ()=>{
 
 //FOR THE CK SELECTION
 var options = [
-    {value: "2023-03-30", text: "CHALK 1"},
+   // {value: "2023-03-30", text: "CHALK 1"},
     {value: "2023-04-05", text: "CHALK 2"},
     {value: "2023-05-26", text: "CHALK 3"}
 ];
