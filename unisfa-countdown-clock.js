@@ -63,7 +63,7 @@ function calculate_checkday(day){
      const prodml = Math.floor(proposeddate / 30);
      const proddl = Math.floor(proposeddate % 30);
      var chmonth = document.querySelector(ckpro);
-     if(prodml === 0 ){
+     if(prodml == 0 proddl == 0){
       chmonth.innerHTML = 
         `<p> <strong>Days left with Proposed Date  &dArr;</strong></P>
          <p> Days left: ${proposeddate} </p>
