@@ -79,7 +79,7 @@ function calculate_checkday(day){
   }
   
   // CHALK ONE
-  function chalk_1(){ forAll_chalk('2023-03-30', '2024-05-19', '#ck1', "#ckpro1"); }
+ // function chalk_1(){ forAll_chalk('2023-03-30', '2024-05-19', '#ck1', "#ckpro1"); }
   
   // CHALK TWO
   function chalk_2(){ forAll_chalk('2023-04-05', '2024-06-02', '#ck2', "#ckpro2"); }
