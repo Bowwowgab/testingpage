@@ -89,8 +89,8 @@ function calculate_checkday(day){
   
   // CHECK THE DATE TO ENSURE GOOD SUBTRACTION OF DATE -> EVERY 5ms
   function checkdate(){
-    chalk_1();
-    chalk_2();
+   // chalk_1();
+    // chalk_2();
     chalk_3();    
   }
 setInterval(()=>{checkdate()}, 2000);
@@ -174,7 +174,7 @@ document.querySelector('#checker-result-btn').addEventListener('click', ()=>{
 //FOR THE CK SELECTION
 var options = [
    // {value: "2023-03-30", text: "CHALK 1"},
-    {value: "2023-04-05", text: "CHALK 2"},
+   // {value: "2023-04-05", text: "CHALK 2"},
     {value: "2023-05-26", text: "CHALK 3"}
 ];
 
